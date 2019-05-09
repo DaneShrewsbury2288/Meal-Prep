@@ -1,0 +1,16 @@
+table, th, td {
+    border: 1px solid black;
+}
+
+#menuPlannerTitle {
+    border-bottom: 1px black solid;
+}
+
+p {
+    margin: 0;
+}
+
+td {
+    height:50px;
+    width:100px;
+}
