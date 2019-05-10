@@ -14,6 +14,10 @@ p {
     margin: 0;
 }
 
+#User {
+    margin-left: 30%;
+}
+
 td {
     height:50px;
     width:100px;
