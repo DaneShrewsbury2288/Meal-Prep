@@ -1,5 +1,16 @@
 
 
+#bg {
+    background-image: url("../images/background.jpg");
+    
+    width: 100%;
+    height: 2000;
+   
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 #jumbotron {
     background-image: url("../images/Cutting\ Board.jpg");
     
@@ -25,6 +36,7 @@ table, th, td {
     margin-left: 50%;
     width: 150px;
     height: 50px;
+    margin-top: 10px;
 }
 
 
