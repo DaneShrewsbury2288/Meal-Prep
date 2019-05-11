@@ -17,8 +17,8 @@
     <!-- CSS file linked -->
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
-<!-- Firebase Reference -->
-<script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-app.js"></script>
+    <!-- Firebase Reference -->
+    <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-app.js"></script>
 
 </head>
 
@@ -27,97 +27,114 @@
     <div class="container">
         <div class="row">
             <div class="column">
-                <div class="jumbotron jumbotron-fluid rounded">
+                <div class="jumbotron jumbotron-fluid">
                     <h1 class="display-4">Weekly Meal Prep!</h1>
-                    <br>
                     <p class="lead">This website will allower users to plan out a weekly schedule and view the
                         caloric/nutritional totals of these meals</p>
                 </div>
             </div>
         </div>
+    
+    </div>
 
+    <br>
+    <br>
 
-
-
-        <form id="User">
-
-
-            <input type="text" id="login" class="fadeIn second" name="login" placeholder="User Name">
-
-            <input type="submit" class="fadeIn fourth" value="Log In">
-
-        </form>
-
-        <br>
-        <br>
-
-
+    <div class="container">
         <div class="row">
             <div class="column">
-
-                <div id="menuPlannerTitle">
-                    <p>Weekly Menu Planner</p>
-                </div>
-
-                <table>
-                    <tr>
-                        <th></th>
-                        <th>Sunday</th>
-                        <th>Monday</th>
-                        <th>Tuesday</th>
-                        <th>Wednesday</th>
-                        <th>Thursday</th>
-                        <th>Friday</th>
-                        <th>Saturday</th>
-                    </tr>
-                    <tr>
-                        <th>Breakfast</th>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <th>Lunch</th>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <th>Dinner</th>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>Price<br>Calories<br>Protein<br>Fat<br>Carbohydrates</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                </table>
-
-                <br>
-
-                <button type="button" class="btn btn-success">Calculate</button>
-
+                <p id="weeklyMenuTitle">Weekly Menu Planner!</p>
             </div>
         </div>
+
+        <div class="row">
+            <div class="col-2"></div>
+            <div class="col-2">
+                <p>BREAKFEST</p>
+            </div>
+            <div class="col-2">
+                <p>LUNCH</p>
+            </div>
+            <div class="col-2">
+                <p>DINNER</p>
+            </div>
+            <div class="col-2">
+                <p>SNACKS</p>
+            </div>
+        </div>
+
+        <div class="row day" id="sunday">
+            <div class="col-2">
+                <p>SUNDAY</p>
+            </div>
+            <div class="col-2"></div>
+            <div class="col-2"></div>
+            <div class="col-2"></div>
+            <div class="col-2"></div>
+        </div>
+        
+        <div class="row day" id="monday">
+            <div class="col-2">
+                <p>MONDAY</p>
+            </div>
+            <div class="col-2"></div>
+            <div class="col-2"></div>
+            <div class="col-2"></div>
+            <div class="col-2"></div>
+        </div>
+
+        <div class="row day" id="tuesday">
+            <div class="col-2">
+                <p>TUESDAY</p>
+            </div>
+            <div class="col-2"></div>
+            <div class="col-2"></div>
+            <div class="col-2"></div>
+            <div class="col-2"></div>
+        </div>
+
+        <div class="row day" id="wednesday">
+            <div class="col-2">
+                <p>WEDNESDAY</p>
+            </div>
+            <div class="col-2"></div>
+            <div class="col-2"></div>
+            <div class="col-2"></div>
+            <div class="col-2"></div>
+        </div>
+
+        <div class="row day" id="thursday">
+            <div class="col-2">
+                <p>THURSDAY</p>
+            </div>
+            <div class="col-2"></div>
+            <div class="col-2"></div>
+            <div class="col-2"></div>
+            <div class="col-2"></div>
+        </div>    
+    
+        <div class="row day" id="friday">
+            <div class="col-2">
+                <p>FRIDAY</p>
+            </div>
+            <div class="col-2"></div>
+            <div class="col-2"></div>
+            <div class="col-2"></div>
+            <div class="col-2"></div>
+        </div>    
+    
+        <div class="row day" id="saturday">
+            <div class="col-2">
+                <p>SATURDAY</p>
+            </div>
+            <div class="col-2"></div>
+            <div class="col-2"></div>
+            <div class="col-2"></div>
+            <div class="col-2"></div>
+        </div>    
+    
+    
+    
     </div>
 
 

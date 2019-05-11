@@ -18,7 +18,36 @@ p {
     margin-left: 30%;
 }
 
-td {
-    height:50px;
-    width:100px;
+
+
+.day {
+    margin: 0 0 5px 0;
+}
+
+#sunday {
+    background-color: #1E90FF;
+}
+
+#monday {
+    background-color: #778899;
+}
+
+#tuesday {
+    background-color: rgb(255, 184, 30)
+}
+
+#wednesday {
+    background-color: #1E90FF;
+}
+
+#thursday {
+    background-color: #1E90FF;
+}
+
+#friday {
+    background-color: #1E90FF;
+}
+
+#saturday {
+    background-color: #1E90FF;
 }
