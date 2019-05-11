@@ -20,6 +20,9 @@
     <!-- Firebase Reference -->
     <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-app.js"></script>
 
+    <!-- Google Font link -->
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP" rel="stylesheet">
+
 </head>
 
 <body>
@@ -60,24 +63,28 @@
         </div>
 
         <div class="row">
+
+        </div>
+
+        <div class="row">
             <div class="col-2"></div>
             <div class="col-2">
-                <p>BREAKFEST</p>
+                <p class="category">BREAKFEST</p>
             </div>
             <div class="col-2">
-                <p>LUNCH</p>
+                <p class="category">LUNCH</p>
             </div>
             <div class="col-2">
-                <p>DINNER</p>
+                <p class="category">DINNER</p>
             </div>
             <div class="col-2">
-                <p>SNACKS</p>
+                <p class="category">STATS</p>
             </div>
         </div>
 
         <div class="row day" id="sunday">
             <div class="col-2">
-                <p>SUNDAY</p>
+                <p class="dayText">SUNDAY</p>
             </div>
             <div class="col-2">
                 <div class="foodBox"></div>
@@ -88,17 +95,23 @@
             <div class="col-2">
                 <div class="foodBox"></div>
             </div>
-            <div class="col-2">
-                <div class="foodBox"></div>
-            </div>
-            <div class="col-2">
-                <div class="foodBox"></div>
+            <div class="col-sm-auto">
+                <div class="foodBox">
+                    <p>Price:<span></span> 
+                    <br>
+                        Protein:<span></span>
+                    <br>
+                        Carbs: <span></span>
+                    <br>
+                        Calories: <span></span>
+                    </p>
+                </div>
             </div>
         </div>
         
         <div class="row day" id="monday">
             <div class="col-2">
-                <p>MONDAY</p>
+                <p class="dayText">MONDAY</p>
             </div>
             <div class="col-2">
                 <div class="foodBox"></div>
@@ -109,14 +122,23 @@
             <div class="col-2">
                 <div class="foodBox"></div>
             </div>
-            <div class="col-2">
-                <div class="foodBox"></div>
+            <div class="col-sm-auto">
+                <div class="foodBox">
+                    <p>Price:<span></span> 
+                    <br>
+                        Protein:<span></span>
+                    <br>
+                        Carbs: <span></span>
+                    <br>
+                        Calories: <span></span>
+                    </p>
+                </div>
             </div>
         </div>
 
         <div class="row day" id="tuesday">
             <div class="col-2">
-                <p>TUESDAY</p>
+                <p class="dayText">TUESDAY</p>
             </div>
             <div class="col-2">
                 <div class="foodBox"></div>
@@ -127,14 +149,23 @@
             <div class="col-2">
                 <div class="foodBox"></div>
             </div>
-            <div class="col-2">
-                <div class="foodBox"></div>
+            <div class="col-sm-auto">
+                <div class="foodBox">
+                    <p>Price:<span></span> 
+                    <br>
+                        Protein:<span></span>
+                    <br>
+                        Carbs: <span></span>
+                    <br>
+                        Calories: <span></span>
+                    </p>
+                </div>
             </div>
         </div>
 
         <div class="row day" id="wednesday">
             <div class="col-2">
-                <p>WEDNESDAY</p>
+                <p class="dayText">WEDNESDAY</p>
             </div>
             <div class="col-2">
                 <div class="foodBox"></div>
@@ -145,14 +176,23 @@
             <div class="col-2">
                 <div class="foodBox"></div>
             </div>
-            <div class="col-2">
-                <div class="foodBox"></div>
+            <div class="col-sm-auto">
+                <div class="foodBox">
+                    <p>Price:<span></span> 
+                    <br>
+                        Protein:<span></span>
+                    <br>
+                        Carbs: <span></span>
+                    <br>
+                        Calories: <span></span>
+                    </p>
+                </div>
             </div>
     </div>
 
         <div class="row day" id="thursday">
             <div class="col-2">
-                <p>THURSDAY</p>
+                <p class="dayText">THURSDAY</p>
             </div>
             <div class="col-2">
                 <div class="foodBox"></div>
@@ -163,14 +203,23 @@
             <div class="col-2">
                 <div class="foodBox"></div>
             </div>
-            <div class="col-2">
-                <div class="foodBox"></div>
+            <div class="col-sm-auto">
+                <div class="foodBox">
+                    <p>Price:<span></span> 
+                    <br>
+                        Protein:<span></span>
+                    <br>
+                        Carbs: <span></span>
+                    <br>
+                        Calories: <span></span>
+                    </p>
+                </div>
             </div>
         </div>    
     
         <div class="row day" id="friday">
             <div class="col-2">
-                <p>FRIDAY</p>
+                <p class="dayText">FRIDAY</p>
             </div>
             <div class="col-2">
                 <div class="foodBox"></div>
@@ -181,14 +230,23 @@
             <div class="col-2">
                 <div class="foodBox"></div>
             </div>
-            <div class="col-2">
-                <div class="foodBox"></div>
+            <div class="col-sm-auto">
+                <div class="foodBox">
+                     <p>Price:<span></span> 
+                    <br>
+                        Protein:<span></span>
+                    <br>
+                        Carbs: <span></span>
+                    <br>
+                        Calories: <span></span>
+                    </p>
+                </div>
             </div>
         </div>    
     
         <div class="row day" id="saturday">
             <div class="col-2">
-                <p>SATURDAY</p>
+                <p class="dayText">SATURDAY</p>
             </div>
             <div class="col-2">
                 <div class="foodBox"></div>
@@ -199,8 +257,17 @@
             <div class="col-2">
                 <div class="foodBox"></div>
             </div>
-            <div class="col-2">
-                <div class="foodBox"></div>
+            <div class="col-sm-auto">
+                <div class="foodBox">
+                    <p>Price:<span></span> 
+                    <br>
+                        Protein:<span></span>
+                    <br>
+                        Carbs: <span></span>
+                    <br>
+                        Calories: <span></span>
+                    </p>
+                </div>
             </div>
         </div>    
     

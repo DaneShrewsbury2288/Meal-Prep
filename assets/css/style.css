@@ -20,7 +20,7 @@ p {
 
 .day {
     border-radius: 25px;
-    margin: 0 0 10px 0;
+    margin-bottom: 10px;
 }
 
 #sunday {
@@ -53,20 +53,32 @@ p {
 
 .foodBox {
     background-color: white;
-    border-radius: 25px;
+    border-radius: 5px;
     height:100px;
     margin:5px 10px 5px 5px;
-    width:200px;
+    width:180px;
 }
 
 .col-2 {
     padding:0;
 }
 
-.row {
-    margin:0;
-}
-
 #weeklyMenuTitle {
     border-bottom: 2px solid black;
+}
+
+.dayText {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 28px;
+    /* font-weight: bold; */
+    left: 10%;
+    position: relative;
+    top:30%;
+}
+
+.category {
+    font-size: 20px;
+    font-weight:bold;
+    position:relative;
+    left:25%;
 }
