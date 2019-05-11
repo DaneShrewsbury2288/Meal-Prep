@@ -37,6 +37,8 @@ $(document).ready(function () {
             })
             .then(function (response) {
 
+            var results = response.data;
+
 
         });
 
