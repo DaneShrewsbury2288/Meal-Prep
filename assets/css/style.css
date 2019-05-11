@@ -1,5 +1,7 @@
 
 
+
+
 #jumbotron {
     background-image: url("../images/Cutting\ Board.jpg");
     
@@ -14,6 +16,16 @@
 #jumbotronintro {
     margin-left: 30%;
     margin-right: 30%;
+    margin-top: 30px;
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 30px;
+    height: 200px;
+    
+}
+
+#Title {
+    font-family: 'Bangers', cursive;
+    margin-top: 30px;
 }
 
 table, th, td {
@@ -22,11 +34,11 @@ table, th, td {
 
 #calculate {
     float: right;
-    margin-left: 50%;
+    margin-left: 55%;
     width: 150px;
     height: 50px;
+    margin-top: 10px;
 }
-
 
 
 #menuPlannerTitle {
@@ -40,6 +52,14 @@ h1 {
 #user {
     margin-left: 40%;
 }
+
+::-webkit-input-placeholder {
+    text-align: center;
+ }
+
+ #login-button {
+     margin-left: 50px;
+ }
 
 #calendar {
     margin-right:50px;
@@ -118,7 +138,7 @@ h1 {
 }
 
 #stats {
-    margin-left: 25px;
+    margin-left: 20px;
 }
 
 .statsBox {
