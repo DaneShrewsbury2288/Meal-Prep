@@ -61,7 +61,17 @@
             <input type="submit" id="login-button" class="fadeIn fourth" value="Log In">
 
         </div>
-      
+
+    </form>
+
+    <div class="container" id="calendar">
+        <div class="row" id="weeklyMenuTitle">
+            <div class="column">
+                <p id="weeklyMenuText">Weekly Menu Planner!</p>
+            </div>
+            <button type="button" class="btn btn-success" id="calculate"> Calculate! </button>
+        </div>
+
         <div class="row">
             <div class="col-2"></div>
             <div class="column">
@@ -78,246 +88,220 @@
             </div>
         </div>
 
-        <div class="container" id="calendar">
-            <div class="row" id="weeklyMenuTitle">
-                <div class="column">
-                    <p id="weeklyMenuText">Weekly Menu Planner!</p>
-                </div>
-                <button type="button" class="btn btn-success" id="calculate"> Calculate! </button>
+        <div class="row day" id="sunday">
+            <div class="col-2">
+                <p class="dayText">SUNDAY</p>
             </div>
-
+            <div class="column">
+                <div class="foodBox"></div>
             </div>
-
-            <div class="row">
-                <div class="col-2"></div>
-                <div class="column">
-                    <p class="category" id="breakfast-button">BREAKFAST</p>
-                </div>
-                <div class="column">
-                    <p class="category" id="lunch-button">LUNCH</p>
-                </div>
-                <div class="column">
-                    <p class="category" id="dinner-button">DINNER</p>
-                </div>
-                <div class="column">
-                    <p class="category" id="stats">STATS</p>
-                </div>
+            <div class="column">
+                <div class="foodBox"></div>
             </div>
-
-            <div class="row day" id="sunday">
-                <div class="col-2">
-                    <p class="dayText">SUNDAY</p>
-                </div>
-                <div class="column">
-                    <div class="foodBox"></div>
-                </div>
-                <div class="column">
-                    <div class="foodBox"></div>
-                </div>
-                <div class="column">
-                    <div class="foodBox"></div>
-                </div>
-                <div class="column">
-                    <div class="foodBox">
-                        <div class="statsBox">
-                            <p>Price:<span></span>
-                                <br>
-                                Protein:<span></span>
-                                <br>
-                                Carbs: <span></span>
-                                <br>
-                                Calories: <span></span>
-                            </p>
-                        </div>
+            <div class="column">
+                <div class="foodBox"></div>
+            </div>
+            <div class="column">
+                <div class="foodBox">
+                    <div class="statsBox">
+                        <p>Price:<span></span>
+                            <br>
+                            Protein:<span></span>
+                            <br>
+                            Carbs: <span></span>
+                            <br>
+                            Calories: <span></span>
+                        </p>
                     </div>
                 </div>
             </div>
+        </div>
 
-            <div class="row day" id="monday">
-                <div class="col-2">
-                    <p class="dayText">MONDAY</p>
-                </div>
-                <div class="column">
-                    <div class="foodBox"></div>
-                </div>
-                <div class="column">
-                    <div class="foodBox"></div>
-                </div>
-                <div class="column">
-                    <div class="foodBox"></div>
-                </div>
-                <div class="column">
-                    <div class="foodBox">
-                        <div class="statsBox">
-                            <p>Price:<span></span>
-                                <br>
-                                Protein:<span></span>
-                                <br>
-                                Carbs: <span></span>
-                                <br>
-                                Calories: <span></span>
-                            </p>
-                        </div>
+        <div class="row day" id="monday">
+            <div class="col-2">
+                <p class="dayText">MONDAY</p>
+            </div>
+            <div class="column">
+                <div class="foodBox"></div>
+            </div>
+            <div class="column">
+                <div class="foodBox"></div>
+            </div>
+            <div class="column">
+                <div class="foodBox"></div>
+            </div>
+            <div class="column">
+                <div class="foodBox">
+                    <div class="statsBox">
+                        <p>Price:<span></span>
+                            <br>
+                            Protein:<span></span>
+                            <br>
+                            Carbs: <span></span>
+                            <br>
+                            Calories: <span></span>
+                        </p>
                     </div>
                 </div>
             </div>
+        </div>
 
-            <div class="row day" id="tuesday">
-                <div class="col-2">
-                    <p class="dayText">TUESDAY</p>
-                </div>
-                <div class="column">
-                    <div class="foodBox"></div>
-                </div>
-                <div class="column">
-                    <div class="foodBox"></div>
-                </div>
-                <div class="column">
-                    <div class="foodBox"></div>
-                </div>
-                <div class="column">
-                    <div class="foodBox">
-                        <div class="statsBox">
-                            <p>Price:<span></span>
-                                <br>
-                                Protein:<span></span>
-                                <br>
-                                Carbs: <span></span>
-                                <br>
-                                Calories: <span></span>
-                            </p>
-                        </div>
+        <div class="row day" id="tuesday">
+            <div class="col-2">
+                <p class="dayText">TUESDAY</p>
+            </div>
+            <div class="column">
+                <div class="foodBox"></div>
+            </div>
+            <div class="column">
+                <div class="foodBox"></div>
+            </div>
+            <div class="column">
+                <div class="foodBox"></div>
+            </div>
+            <div class="column">
+                <div class="foodBox">
+                    <div class="statsBox">
+                        <p>Price:<span></span>
+                            <br>
+                            Protein:<span></span>
+                            <br>
+                            Carbs: <span></span>
+                            <br>
+                            Calories: <span></span>
+                        </p>
                     </div>
                 </div>
             </div>
+        </div>
 
-            <div class="row day" id="wednesday">
-                <div class="col-2">
-                    <p class="dayText">WEDNESDAY</p>
-                </div>
-                <div class="column">
-                    <div class="foodBox"></div>
-                </div>
-                <div class="column">
-                    <div class="foodBox"></div>
-                </div>
-                <div class="column">
-                    <div class="foodBox"></div>
-                </div>
-                <div class="column">
-                    <div class="foodBox">
-                        <div class="statsBox">
-                            <p>Price:<span></span>
-                                <br>
-                                Protein:<span></span>
-                                <br>
-                                Carbs: <span></span>
-                                <br>
-                                Calories: <span></span>
-                            </p>
-                        </div>
+        <div class="row day" id="wednesday">
+            <div class="col-2">
+                <p class="dayText">WEDNESDAY</p>
+            </div>
+            <div class="column">
+                <div class="foodBox"></div>
+            </div>
+            <div class="column">
+                <div class="foodBox"></div>
+            </div>
+            <div class="column">
+                <div class="foodBox"></div>
+            </div>
+            <div class="column">
+                <div class="foodBox">
+                    <div class="statsBox">
+                        <p>Price:<span></span>
+                            <br>
+                            Protein:<span></span>
+                            <br>
+                            Carbs: <span></span>
+                            <br>
+                            Calories: <span></span>
+                        </p>
                     </div>
                 </div>
             </div>
+        </div>
 
-            <div class="row day" id="thursday">
-                <div class="col-2">
-                    <p class="dayText">THURSDAY</p>
-                </div>
-                <div class="column">
-                    <div class="foodBox"></div>
-                </div>
-                <div class="column">
-                    <div class="foodBox"></div>
-                </div>
-                <div class="column">
-                    <div class="foodBox"></div>
-                </div>
-                <div class="column">
-                    <div class="foodBox">
-                        <div class="statsBox">
-                            <p>Price:<span></span>
-                                <br>
-                                Protein:<span></span>
-                                <br>
-                                Carbs: <span></span>
-                                <br>
-                                Calories: <span></span>
-                            </p>
-                        </div>
+        <div class="row day" id="thursday">
+            <div class="col-2">
+                <p class="dayText">THURSDAY</p>
+            </div>
+            <div class="column">
+                <div class="foodBox"></div>
+            </div>
+            <div class="column">
+                <div class="foodBox"></div>
+            </div>
+            <div class="column">
+                <div class="foodBox"></div>
+            </div>
+            <div class="column">
+                <div class="foodBox">
+                    <div class="statsBox">
+                        <p>Price:<span></span>
+                            <br>
+                            Protein:<span></span>
+                            <br>
+                            Carbs: <span></span>
+                            <br>
+                            Calories: <span></span>
+                        </p>
                     </div>
                 </div>
             </div>
+        </div>
 
-            <div class="row day" id="friday">
-                <div class="col-2">
-                    <p class="dayText">FRIDAY</p>
-                </div>
-                <div class="column">
-                    <div class="foodBox"></div>
-                </div>
-                <div class="column">
-                    <div class="foodBox"></div>
-                </div>
-                <div class="column">
-                    <div class="foodBox"></div>
-                </div>
-                <div class="column">
-                    <div class="foodBox">
-                        <div class="statsBox">
-                            <p>Price:<span></span>
-                                <br>
-                                Protein:<span></span>
-                                <br>
-                                Carbs: <span></span>
-                                <br>
-                                Calories: <span></span>
-                            </p>
-                        </div>
+        <div class="row day" id="friday">
+            <div class="col-2">
+                <p class="dayText">FRIDAY</p>
+            </div>
+            <div class="column">
+                <div class="foodBox"></div>
+            </div>
+            <div class="column">
+                <div class="foodBox"></div>
+            </div>
+            <div class="column">
+                <div class="foodBox"></div>
+            </div>
+            <div class="column">
+                <div class="foodBox">
+                    <div class="statsBox">
+                        <p>Price:<span></span>
+                            <br>
+                            Protein:<span></span>
+                            <br>
+                            Carbs: <span></span>
+                            <br>
+                            Calories: <span></span>
+                        </p>
                     </div>
                 </div>
             </div>
+        </div>
 
-            <div class="row day" id="saturday">
-                <div class="col-2">
-                    <p class="dayText">SATURDAY</p>
-                </div>
-                <div class="column">
-                    <div class="foodBox"></div>
-                </div>
-                <div class="column">
-                    <div class="foodBox"></div>
-                </div>
-                <div class="column">
-                    <div class="foodBox"></div>
-                </div>
-                <div class="column">
-                    <div class="foodBox">
-                        <div class="statsBox">
-                            <p>Price:<span></span>
-                                <br>
-                                Protein:<span></span>
-                                <br>
-                                Carbs: <span></span>
-                                <br>
-                                Calories: <span></span>
-                            </p>
-                        </div>
+        <div class="row day" id="saturday">
+            <div class="col-2">
+                <p class="dayText">SATURDAY</p>
+            </div>
+            <div class="column">
+                <div class="foodBox"></div>
+            </div>
+            <div class="column">
+                <div class="foodBox"></div>
+            </div>
+            <div class="column">
+                <div class="foodBox"></div>
+            </div>
+            <div class="column">
+                <div class="foodBox">
+                    <div class="statsBox">
+                        <p>Price:<span></span>
+                            <br>
+                            Protein:<span></span>
+                            <br>
+                            Carbs: <span></span>
+                            <br>
+                            Calories: <span></span>
+                        </p>
                     </div>
                 </div>
             </div>
-
-
-
         </div>
 
 
-    </div>
-
-    <div id="testdiv">
 
     </div>
-    </div>
+
+
+
+<div id="testdiv">
+
+</div>
+</div>
+
 </body>
 
 
