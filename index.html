@@ -30,44 +30,43 @@
 <body>
 
 
-
-
     <div class="container">
-        <div class="row">
-            <div class="column">
-                <div class="jumbotron jumbotron-fluid" id="jumbotron">
-                    <h1 class="display-4" id="Title">Weekly Meal Prep!</h1>
-                    <p class="lead" id="jumbotronintro">This website will allower users to plan out a weekly
-                        schedule and view the
-                        caloric/nutritional totals of these meals.</p>
-                </div>
+        <div class="jumbotron jumbotron-fluid" id="jumbotron">
+            <div class="content">
+                <h1 class="display-4" id="Title">Weekly Meal Prep!</h1>
+                <p class="lead" id="jumbotronintro">This website will allower users to plan out a weekly
+                    schedule and view the
+                    caloric/nutritional totals of these meals.</p>
             </div>
         </div>
-
     </div>
+    <br>
 
-    <br>
-    <br>
 
     <form id="user">
 
-        <div class="form-group">
+        <div class="card bg-light mb-3" id="user-card">
 
-            <input type="text" id="user-login" class="fadeIn second" name="login" placeholder="User Name">
+            <div class="form-group">
+
+                <input type="text" id="user-login" class="fadeIn second" name="login" placeholder="User Name">
+            </div>
+
+            <div class="form-group">
+
+                <input type="text" id="user-password" class="fadeIn second" name="password" placeholder="Password">
+
+            </div>
+
+            <input type="submit" id="login-button" class="fadeIn fourth" value="Log In">
+
         </div>
-
-        <div class="form-group">
-
-            <input type="text" id="user-password" class="fadeIn second" name="password" placeholder="Password">
-
-        </div>
-
-        <input type="submit" id="login-button" class="fadeIn fourth" value="Log In">
 
     </form>
 
+
     <br>
-    <br>
+
 
     <div class="container" id="calendar">
         <div class="row" id="weeklyMenuTitle">
