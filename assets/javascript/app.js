@@ -19,25 +19,34 @@ $(document).ready(function () {
     var database = firebase.database();
 
 
-    // ajax call
+    
 
+    //On click of x button, call api for images and nutrient information
+    $(document).on("click", "whateverbutton", function () {
+        
+    // ajax call
     var apiID = "aee51471";
     var apiKey = "b4a9d4d9acaf471f9a836e6615157895";
+    
     // var q = on.click on breakfest lunch or dinner dropdown?
     var queryURL = "https://api.edamam.com/search?q=" + q + "&app_id={" + apiID + "}&app_key=${" + apiKey + "}";
 
     // --------EXAMPLE-------------
     // curl "https://api.edamam.com/search?q=chicken&app_id=${YOUR_APP_ID}&app_key=${YOUR_APP_KEY}&from=0&to=3&calories=591-722&health=alcohol-free"
 
-
-
         $.ajax({
             url: queryURL,
             method: "GET"
-            })
+        })
             .then(function (response) {
 
+                var results = response.data;
+                var FoodImage = $("<img class='result>");
+
+                FoodImage.prepend(FoodImage);
+
+                FoodImage.
+            
 
         });
-
-});
+    });
