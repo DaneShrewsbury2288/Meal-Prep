@@ -1,3 +1,5 @@
+
+
 $(document).ready(function () {
 
     // Your web app's Firebase configuration
@@ -16,23 +18,23 @@ $(document).ready(function () {
     firebase.initializeApp(firebaseConfig);
 
     // Create a variable to reference the database.
-    var database = firebase.database();
+    //var database = firebase.database();
 
 
     
 
     //On click of x button, call api for images and nutrient information
-    $(document).on("click", "whateverbutton", function () {
-        
+    $(document).on("click", "#calculate", function () {
+    
+        // For breakfast, hide lunch/dinner. For lunch, hide breakfast/dinner. etc..
+
+
     // ajax call
     var apiID = "aee51471";
     var apiKey = "b4a9d4d9acaf471f9a836e6615157895";
-    
-    // var q = on.click on breakfest lunch or dinner dropdown?
-    var queryURL = "https://api.edamam.com/search?q=" + q + "&app_id={" + apiID + "}&app_key=${" + apiKey + "}";
-
-    // --------EXAMPLE-------------
-    // curl "https://api.edamam.com/search?q=chicken&app_id=${YOUR_APP_ID}&app_key=${YOUR_APP_KEY}&from=0&to=3&calories=591-722&health=alcohol-free"
+    var q = "chicken";
+    // var q = on.click on breakfast lunch or dinner dropdown?
+    var queryURL = `https://api.edamam.com/search?q=${q}&app_id=${apiID}&app_key=${apiKey}`
 
         $.ajax({
             url: queryURL,
@@ -41,12 +43,13 @@ $(document).ready(function () {
             .then(function (response) {
 
                 var results = response.data;
-                var FoodImage = $("<img class='result>");
+                var FoodImage = $("<img class='result'>");
 
                 FoodImage.prepend(FoodImage);
 
-                FoodImage.
+                console.log(response);
             
 
         });
     });
+});
