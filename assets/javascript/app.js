@@ -42,10 +42,14 @@ $(document).ready(function () {
         })
             .then(function (response) {
 
-                var results = response.data;
-                var FoodImage = $("<img class='result'>");
+                var results = response;
+                var FoodImageArea = $("<img>");
 
-                FoodImage.prepend(FoodImage);
+                FoodImageArea.append(results.hits[1].recipe.image);
+                
+                FoodImageArea.attr("src", results.hits[1].recipe.image);
+
+                $("#testdiv").prepend(FoodImageArea);
 
                 console.log(response);
             
