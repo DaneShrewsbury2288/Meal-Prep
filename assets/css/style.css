@@ -18,18 +18,17 @@ p {
     margin-left: 30%;
 }
 
-
-
 .day {
-    margin: 0 0 5px 0;
+    border-radius: 25px;
+    margin: 0 0 10px 0;
 }
 
 #sunday {
-    background-color: #1E90FF;
+    background-color: rgb(248, 242, 190);
 }
 
 #monday {
-    background-color: #778899;
+    background-color: #6ab4ff;
 }
 
 #tuesday {
@@ -37,17 +36,37 @@ p {
 }
 
 #wednesday {
-    background-color: #1E90FF;
+    background-color: rgb(227, 110, 250);
 }
 
 #thursday {
-    background-color: #1E90FF;
+    background-color: rgb(196, 250, 219);
 }
 
 #friday {
-    background-color: #1E90FF;
+    background-color: rgb(188, 217, 247);
 }
 
 #saturday {
-    background-color: #1E90FF;
+    background-color: rgb(250, 171, 171);
+}
+
+.foodBox {
+    background-color: white;
+    border-radius: 25px;
+    height:100px;
+    margin:5px 10px 5px 5px;
+    width:200px;
+}
+
+.col-2 {
+    padding:0;
+}
+
+.row {
+    margin:0;
+}
+
+#weeklyMenuTitle {
+    border-bottom: 2px solid black;
 }
