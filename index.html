@@ -3,102 +3,295 @@
 
 <head>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Meal Prep Time!</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meal Prep Time!</title>
 
-<!-- Bootstrap -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-<script src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
 
-<!-- CSS file linked -->
-<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <!-- CSS file linked -->
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
-<!-- Firebase Reference -->
-<script src="https://www.gstatic.com/firebasejs/5.11.1/firebase.js"></script>
+    <!-- Firebase Reference -->
+    <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-app.js"></script>
+
+    <!-- Google Font link -->
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP" rel="stylesheet">
 
 </head>
 
 <body>
+    <br>
 
-<div class="container">
-    <div class="row">
-        <div class="column">
-            <div class="jumbotron jumbotron-fluid">
-                <h1 class="display-4">Fluid jumbotron</h1>
-                <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+    <div class="container">
+        <div class="row">
+            <div class="column">
+                <div class="jumbotron jumbotron-fluid" id="jumbotron">
+                    <h1 class="display-4">Weekly Meal Prep!</h1>
+                    <p class="lead" id="jumbotronintro">This website will allower users to plan out a weekly schedule and view the
+                        caloric/nutritional totals of these meals</p>
+                </div>
             </div>
         </div>
+    
     </div>
 
-    <div class="row">
-        <div class="column">
+    <br>
+    <br>
 
-            <div id="menuPlannerTitle">
-                <p>Weekly Menu Planner</p>
+    <form id="user">
+
+
+        <input type="text" id="login" class="fadeIn second" name="login" placeholder="User Name">
+
+        <input type="submit" class="fadeIn fourth" value="Log In">
+
+    </form>
+
+    <br>
+    <br>
+
+    <div class="container" id="calendar">
+        <div class="row" id="weeklyMenuTitle">
+            <div class="column">
+                <p id="weeklyMenuText">Weekly Menu Planner!</p>
             </div>
+        </div>
 
-            <table>
-            <tr>
-                <th></th>
-                <th>Sunday</th>
-                <th>Monday</th>
-                <th>Tuesday</th>
-                <th>Wednesday</th>
-                <th>Thursday</th>
-                <th>Friday</th>
-                <th>Saturday</th>
-            </tr>
-            <tr>
-                <th>Breakfast</th>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <th>Lunch</th>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <th>Dinner</th>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>Price<br>Calories<br>Protein<br>Fat<br>Carbohydrates</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            </table>
+        <div class="row">
 
         </div>
+
+        <div class="row">
+            <div class="col-2"></div>
+            <div class="column">
+                <p class="category" id="breakfest">BREAKFAST</p>
+            </div>
+            <div class="column">
+                <p class="category" id="lunch">LUNCH</p>
+            </div>
+            <div class="column">
+                <p class="category" id="dinner">DINNER</p>
+            </div>
+            <div class="column">
+                <p class="category" id="stats">STATS</p>
+            </div>
+        </div>
+
+        <div class="row day" id="sunday">
+            <div class="col-2">
+                <p class="dayText">SUNDAY</p>
+            </div>
+            <div class="column">
+                <div class="foodBox"></div>
+            </div>
+            <div class="column">
+                <div class="foodBox"></div>
+            </div>  
+            <div class="column">
+                <div class="foodBox"></div>
+            </div>
+            <div class="column">
+                <div class="foodBox">
+                    <div class="statsBox">
+                        <p>Price:<span></span> 
+                        <br>
+                            Protein:<span></span>
+                        <br>
+                            Carbs: <span></span>
+                        <br>
+                            Calories: <span></span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row day" id="monday">
+            <div class="col-2">
+                <p class="dayText">MONDAY</p>
+            </div>
+            <div class="column">
+                <div class="foodBox"></div>
+            </div>
+            <div class="column">
+                <div class="foodBox"></div>
+            </div>  
+            <div class="column">
+                <div class="foodBox"></div>
+            </div>
+            <div class="column">
+                <div class="foodBox">
+                    <div class="statsBox">
+                        <p>Price:<span></span> 
+                        <br>
+                            Protein:<span></span>
+                        <br>
+                            Carbs: <span></span>
+                        <br>
+                            Calories: <span></span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row day" id="tuesday">
+            <div class="col-2">
+                <p class="dayText">TUESDAY</p>
+            </div>
+            <div class="column">
+                <div class="foodBox"></div>
+            </div>
+            <div class="column">
+                <div class="foodBox"></div>
+            </div>  
+            <div class="column">
+                <div class="foodBox"></div>
+            </div>
+            <div class="column">
+                <div class="foodBox">
+                    <div class="statsBox">
+                        <p>Price:<span></span> 
+                        <br>
+                            Protein:<span></span>
+                        <br>
+                            Carbs: <span></span>
+                        <br>
+                            Calories: <span></span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row day" id="wednesday">
+            <div class="col-2">
+                <p class="dayText">WEDNESDAY</p>
+            </div>
+            <div class="column">
+                <div class="foodBox"></div>
+            </div>
+            <div class="column">
+                <div class="foodBox"></div>
+            </div>  
+            <div class="column">
+                <div class="foodBox"></div>
+            </div>
+            <div class="column">
+                <div class="foodBox">
+                    <div class="statsBox">
+                        <p>Price:<span></span> 
+                        <br>
+                            Protein:<span></span>
+                        <br>
+                            Carbs: <span></span>
+                        <br>
+                            Calories: <span></span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row day" id="thursday">
+            <div class="col-2">
+                <p class="dayText">THURSDAY</p>
+            </div>
+            <div class="column">
+                <div class="foodBox"></div>
+            </div>
+            <div class="column">
+                <div class="foodBox"></div>
+            </div>  
+            <div class="column">
+                <div class="foodBox"></div>
+            </div>
+            <div class="column">
+                <div class="foodBox">
+                    <div class="statsBox">
+                        <p>Price:<span></span> 
+                        <br>
+                            Protein:<span></span>
+                        <br>
+                            Carbs: <span></span>
+                        <br>
+                            Calories: <span></span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>    
+    
+        <div class="row day" id="friday">
+            <div class="col-2">
+                <p class="dayText">FRIDAY</p>
+            </div>
+            <div class="column">
+                <div class="foodBox"></div>
+            </div>
+            <div class="column">
+                <div class="foodBox"></div>
+            </div>  
+            <div class="column">
+                <div class="foodBox"></div>
+            </div>
+            <div class="column">
+                <div class="foodBox">
+                    <div class="statsBox">
+                        <p>Price:<span></span> 
+                        <br>
+                            Protein:<span></span>
+                        <br>
+                            Carbs: <span></span>
+                        <br>
+                            Calories: <span></span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>    
+    
+        <div class="row day" id="saturday">
+            <div class="col-2">
+                <p class="dayText">SATURDAY</p>
+            </div>
+            <div class="column">
+                <div class="foodBox"></div>
+            </div>
+            <div class="column">
+                <div class="foodBox"></div>
+            </div>  
+            <div class="column">
+                <div class="foodBox"></div>
+            </div>
+            <div class="column">
+                <div class="foodBox">
+                    <div class="statsBox">
+                        <p>Price:<span></span> 
+                        <br>
+                            Protein:<span></span>
+                        <br>
+                            Carbs: <span></span>
+                        <br>
+                            Calories: <span></span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>    
+    
+    
+    
     </div>
-</div>
 
 
+    </div>
 </body>
 
 
