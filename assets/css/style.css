@@ -1,6 +1,5 @@
 
 
-
 #jumbotron {
     background-image: url("../images/Cutting\ Board.jpg");
     
@@ -21,6 +20,15 @@ table, th, td {
     border: 1px solid black;
 }
 
+#calculate {
+    float: right;
+    margin-left: 50%;
+    width: 150px;
+    height: 50px;
+}
+
+
+
 #menuPlannerTitle {
     border-bottom: 1px black solid;
 }
@@ -30,11 +38,13 @@ h1 {
 }
 
 #user {
-    margin-left: 30%;
+    margin-left: 40%;
 }
 
 #calendar {
     margin-right:50px;
+    float: left;
+    margin-left: 17%;
 }
 
 .day {
@@ -99,7 +109,7 @@ h1 {
     left:25%;
 }
 
-#breakfest {
+#breakfast {
     margin-left:0;
 }
 
