@@ -4,7 +4,7 @@ $(document).ready(function () {
 
     // Your web app's Firebase configuration
 
-    var firebaseConfig = {
+    var config = {
         apiKey: "AIzaSyDKrVHt43u2axKy28_3Oy1y1mmC9yj1TPU",
         authDomain: "meal-prep-b23a3.firebaseapp.com",
         databaseURL: "https://meal-prep-b23a3.firebaseio.com",
@@ -15,10 +15,29 @@ $(document).ready(function () {
     };
 
     // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
+    firebase.initializeApp(config);
 
     // Create a variable to reference the database.
-    //var database = firebase.database();
+    var database = firebase.database();
+
+    // login
+    var logInForm = document.querySelector("#user");
+    logInForm.addEventListener("submit", function() {
+        event.preventDefault();
+
+        // get user info
+        var email = $("#user-login").val();
+        var password = $("#user-password").val();
+
+
+        console.log(email);
+
+        // sign up the user
+        database.createUserWithEmailAndPassword(email, password)
+
+
+
+    });
 
 
     
@@ -42,10 +61,14 @@ $(document).ready(function () {
         })
             .then(function (response) {
 
-                var results = response.data;
-                var FoodImage = $("<img class='result'>");
+                var results = response;
+                var FoodImageArea = $("<img>");
 
-                FoodImage.prepend(FoodImage);
+                FoodImageArea.append(results.hits[1].recipe.image);
+                
+                FoodImageArea.attr("src", results.hits[1].recipe.image);
+
+                $("#testdiv").prepend(FoodImageArea);
 
                 console.log(response);
             
