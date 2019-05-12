@@ -11,7 +11,7 @@
 #jumbotronintro {
     margin-left: 30%;
     margin-right: 30%;
-    margin-top: 30px;
+    margin-top: 10px;
     color: white;
     font-family: 'Shadows Into Light', cursive;
     font-size: 30px;
@@ -28,22 +28,18 @@
 }
 
 
-.content {
-    background: rgb(0, 0, 0); /* Fallback color */
-    background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+#content {
+    /* background: rgb(0, 0, 0); Fallback color */
+    background: rgba(199, 4, 4, 0.7); /* Black background with 0.5 opacity */
     color: #f1f1f1;
+    height:60%;
     width: 100%;
-    padding: 20px;
 }
 
-#Title {
+#title {
     font-family: 'Bangers', cursive;
     color: white;
     margin-top: 30px;
-}
-
-table, th, td {
-    border: 1px solid black;
 }
 
 #calculate {
@@ -53,7 +49,6 @@ table, th, td {
     height: 50px;
     margin-top: 10px;
 }
-
 
 
 #menuPlannerTitle {

@@ -49,14 +49,6 @@ $(document).ready(function () {
         $("#dinner-menu").show();
     });
 
-
-
-
-
-
-
-
-
     // Your web app's Firebase configuration
 
     var config = {
