@@ -18,6 +18,15 @@
     height: 200px;
 }
 
+.foodName {
+    text-align: center;
+}
+
+#food-card {
+    height: 150px;
+    width: 220px;
+}
+
 
 .content {
     background: rgb(0, 0, 0); /* Fallback color */
@@ -118,6 +127,10 @@ h1 {
     margin: 5px;
     width:226px;
 }
+
+.droparea:-moz-drag-over {
+    border: 3px solid black;
+  }
 
 #weeklyMenuTitle {
     border-bottom: 2px solid black;
