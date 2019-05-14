@@ -27,26 +27,41 @@ $(document).ready(function () {
             $("#food-card").after(cloneDiv);
             var data = event.dataTransfer.getData("Text");
             event.target.appendChild(document.getElementById(data));
-            console.log("dropped2")
+            console.log("successful drop")
         }
     });
 
-    $("#breakfast-button").on("click", function() {
-        $("#breakfast-menu").show();
+    $("#breakfast-button").on("click", function () {
+        if ($("#breakfast-menu").is(":hidden")) {
+            $("#breakfast-menu").show();
+        }
+        else {
+            $("#breakfast-menu").hide();
+        };
         $("#lunch-menu").hide();
         $("#dinner-menu").hide();
     });
 
-    $("#lunch-button").on("click", function() {
+    $("#lunch-button").on("click", function () {
         $("#breakfast-menu").hide();
-        $("#lunch-menu").show();
+        if ($("#lunch-menu").is(":hidden")) {
+            $("#lunch-menu").show();
+        }
+        else {
+            $("#lunch-menu").hide();
+        };
         $("#dinner-menu").hide();
     });
 
-    $("#dinner-button").on("click", function() {
+    $("#dinner-button").on("click", function () {
         $("#breakfast-menu").hide();
         $("#lunch-menu").hide();
-        $("#dinner-menu").show();
+        if ($("#dinner-menu").is(":hidden")) {
+            $("#dinner-menu").show();
+        }
+        else {
+            $("#dinner-menu").hide();
+        };
     });
 
     // Your web app's Firebase configuration

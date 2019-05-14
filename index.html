@@ -10,9 +10,22 @@
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
+
+    <!-- <script src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script> -->
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+
 
     <!-- CSS file linked -->
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
@@ -66,15 +79,15 @@
 
             </div>
         </form>
-        
+
         <!-- Card -->
-        <div id="food-card" class="card" draggable="true"
+        <!-- <div id="food-card" class="card" style="width: 13rem;" draggable="true"
             ondragstart="event.dataTransfer.setData('text/plain', 'Successful drag')">
-            <p class="foodName"> Food Name </p>
+            <p class="foodName"> Test Food Name </p> -->
             <!-- Card image -->
-            <img class="card-img-top droptarget" draggable="true"
-                src="https://mdbootstrap.com/img/Photos/Others/images/49.jpg" alt="Card image cap">
-        </div>
+            <!-- <img class="card-img-top" draggable="false" src="https://mdbootstrap.com/img/Photos/Others/images/49.jpg"
+                alt="Card image cap">
+        </div> -->
 
 
         <br>
@@ -84,6 +97,7 @@
                 <div class="column">
                     <p id="weeklyMenuText">Weekly Menu Planner!</p>
                 </div>
+                <!-- <button type="button" class="btn btn-success" id="clear"> Clear! </button> -->
                 <button type="button" class="btn btn-success" id="calculate"> Calculate! </button>
             </div>
 
@@ -91,15 +105,57 @@
 
             <div class="row">
                 <div class="col-2"></div>
-                <div class="column">
-                    <button class="category btn btn-info" id="breakfast-button">BREAKFAST</button>
+                <div class="column btn-group dropup">
+                    <button type="button" class="category btn btn-info dropdown-toggle" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false" id="breakfast-button">BREAKFAST</button>
+                    <div class="dropdown-menu" id="breakfast-menu">
+                        <!-- Dropdown menu links -->
+                        <div id="food-card" class="card" style="width: 13rem;" draggable="true"
+                            ondragstart="event.dataTransfer.setData('text/plain', 'Successful drag')">
+                            <p class="foodName"> Test Food Name </p>
+                            <!-- Card image -->
+                            <img class="card-img-top" draggable="false"
+                                src="https://mdbootstrap.com/img/Photos/Others/images/49.jpg" alt="Card image cap">
+                        </div>
+                        <div id="food-card" class="card" style="width: 13rem;" draggable="true"
+                        ondragstart="event.dataTransfer.setData('text/plain', 'Successful drag')">
+                        <p class="foodName"> Test Food Name </p>
+                        <!-- Card image -->
+                        <img class="card-img-top" draggable="false"
+                            src="https://mdbootstrap.com/img/Photos/Others/images/49.jpg" alt="Card image cap">
+                    </div>
+                    </div>
                 </div>
-                <div class="column">
-                    <button class="category btn btn-info" id="lunch-button">LUNCH</button>
+
+                <div class="column btn-group dropup">
+                    <button type="button" class="category btn btn-info dropdown-toggle" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false" id="lunch-button">LUNCH</button>
+                    <div class="dropdown-menu" id="lunch-menu">
+                        <!-- Dropdown menu links -->
+                        <div id="food-card" class="card" style="width: 13rem;" draggable="true"
+                            ondragstart="event.dataTransfer.setData('text/plain', 'Successful drag')">
+                            <p class="foodName"> Test Food Name </p>
+                            <!-- Card image -->
+                            <img class="card-img-top" draggable="false"
+                                src="https://mdbootstrap.com/img/Photos/Others/images/49.jpg" alt="Card image cap">
+                        </div>
+                    </div>
                 </div>
-                <div class="column">
-                    <button class="category btn btn-info" id="dinner-button">DINNER</button>
-                </div>
+
+                <div class="column btn-group dropup">
+                        <button type="button" class="category btn btn-info dropdown-toggle" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false" id="dinner-button">DINNER</button>
+                        <div class="dropdown-menu" id="dinner-menu">
+                            <!-- Dropdown menu links -->
+                            <div id="food-card" class="card" style="width: 13rem;" draggable="true"
+                                ondragstart="event.dataTransfer.setData('text/plain', 'Successful drag')">
+                                <p class="foodName"> Test Food Name </p>
+                                <!-- Card image -->
+                                <img class="card-img-top" draggable="false"
+                                    src="https://mdbootstrap.com/img/Photos/Others/images/49.jpg" alt="Card image cap">
+                            </div>
+                        </div>
+                    </div>
                 <div class="column">
                     <button class="category btn btn-info" id="stats">STATS</button>
                 </div>
@@ -317,13 +373,14 @@
 
 
 
-        <div id="testdiv">
+        <!-- <div id="testdiv">
 
             <div class="card bg-light mb-3" id="example-card">
 
             </div>
 
-        </div>
+        </div> -->
+
     </div>
 
 
@@ -342,5 +399,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
 
 </html>

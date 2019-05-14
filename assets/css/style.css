@@ -25,8 +25,17 @@
 #food-card {
     height: 150px;
     width: 220px;
+    align-content: center;
 }
 
+img {
+    height: 100px;
+    width: 120px;
+}
+
+#breakfast-menu {
+    left: 100px;
+}
 
 #content {
     /* background: rgb(0, 0, 0); Fallback color */
