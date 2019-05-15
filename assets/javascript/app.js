@@ -132,50 +132,57 @@ $(document).ready(function () {
         })
             .then(function (response) {
 
-                var results = response;
+                // var results = response;
 
-                $("#break-card-img-1").append(results.hits[1].recipe.image);
-                $("#break-card-img-1").attr("src", results.hits[1].recipe.image);
-                $("#breakOne").prepend(results.hits[1].recipe.label);
+                for (var i = 0; i < response.hits.length; i++) {
+                    $("#break-card-img-" + i).append(response.hits[i].recipe.image);
+                    $("#break-card-img-" + i).attr("src", response.hits[i].recipe.image);
+                    $("#break" + i).prepend(response.hits[i].recipe.label);
+                }
 
-                $("#break-card-img-2").append(results.hits[2].recipe.image);
-                $("#break-card-img-2").attr("src", results.hits[2].recipe.image);
-                $("#breakTwo").prepend(results.hits[2].recipe.label);
+                // $("#break-card-img-1").append(results.hits[1].recipe.image);
+                // $("#break-card-img-1").attr("src", results.hits[1].recipe.image);
+                // $("#breakOne").prepend(results.hits[1].recipe.label);
 
-                $("#break-card-img-3").append(results.hits[3].recipe.image);
-                $("#break-card-img-3").attr("src", results.hits[3].recipe.image);
-                $("#breakThree").prepend(results.hits[3].recipe.label);
+                // $("#break-card-img-2").append(results.hits[2].recipe.image);
+                // $("#break-card-img-2").attr("src", results.hits[2].recipe.image);
+                // $("#breakTwo").prepend(results.hits[2].recipe.label);
+
+                // $("#break-card-img-3").append(results.hits[3].recipe.image);
+                // $("#break-card-img-3").attr("src", results.hits[3].recipe.image);
+                // $("#breakThree").prepend(results.hits[3].recipe.label);
                 
-                $("#break-card-img-4").append(results.hits[4].recipe.image);
-                $("#break-card-img-4").attr("src", results.hits[4].recipe.image);
-                $("#breakFour").prepend(results.hits[4].recipe.label);
+                // $("#break-card-img-4").append(results.hits[4].recipe.image);
+                // $("#break-card-img-4").attr("src", results.hits[4].recipe.image);
+                // $("#breakFour").prepend(results.hits[4].recipe.label);
 
-                $("#break-card-img-5").append(results.hits[5].recipe.image);
-                $("#break-card-img-5").attr("src", results.hits[5].recipe.image);
-                $("#breakFive").prepend(results.hits[5].recipe.label);
+                // $("#break-card-img-5").append(results.hits[5].recipe.image);
+                // $("#break-card-img-5").attr("src", results.hits[5].recipe.image);
+                // $("#breakFive").prepend(results.hits[5].recipe.label);
 
-                $("#break-card-img-6").append(results.hits[6].recipe.image);
-                $("#break-card-img-6").attr("src", results.hits[6].recipe.image);
-                $("#breakSix").prepend(results.hits[6].recipe.label);
+                // $("#break-card-img-6").append(results.hits[6].recipe.image);
+                // $("#break-card-img-6").attr("src", results.hits[6].recipe.image);
+                // $("#breakSix").prepend(results.hits[6].recipe.label);
 
-                $("#break-card-img-7").append(results.hits[7].recipe.image);
-                $("#break-card-img-7").attr("src", results.hits[7].recipe.image);
-                $("#breakSeven").prepend(results.hits[7].recipe.label);
+                // $("#break-card-img-7").append(results.hits[7].recipe.image);
+                // $("#break-card-img-7").attr("src", results.hits[7].recipe.image);
+                // $("#breakSeven").prepend(results.hits[7].recipe.label);
 
-                $("#break-card-img-8").append(results.hits[8].recipe.image);
-                $("#break-card-img-8").attr("src", results.hits[8].recipe.image);
-                $("#breakEight").prepend(results.hits[8].recipe.label);
+                // $("#break-card-img-8").append(results.hits[8].recipe.image);
+                // $("#break-card-img-8").attr("src", results.hits[8].recipe.image);
+                // $("#breakEight").prepend(results.hits[8].recipe.label);
                 
-                $("#break-card-img-9").append(results.hits[9].recipe.image);
-                $("#break-card-img-9").attr("src", results.hits[9].recipe.image);
-                $("#breakNine").prepend(results.hits[9].recipe.label);
+                // $("#break-card-img-9").append(results.hits[9].recipe.image);
+                // $("#break-card-img-9").attr("src", results.hits[9].recipe.image);
+                // $("#breakNine").prepend(results.hits[9].recipe.label);
 
-                $("#break-card-img-10").append(results.hits[0].recipe.image);
-                $("#break-card-img-10").attr("src", results.hits[0].recipe.image);
-                $("#breakTen").prepend(results.hits[0].recipe.label);
+                // $("#break-card-img-10").append(results.hits[0].recipe.image);
+                // $("#break-card-img-10").attr("src", results.hits[0].recipe.image);
+                // $("#breakTen").prepend(results.hits[0].recipe.label);
 
 
                 console.log(response);
+                console.log(response.length);
 
 
             });
