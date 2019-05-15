@@ -70,6 +70,11 @@ $(document).ready(function () {
         };
     });
 
+    $("#clear").on("click", function () {
+        $(".droptarget").empty();
+
+    })
+
     // Your web app's Firebase configuration
 
     var config = {
