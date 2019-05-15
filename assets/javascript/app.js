@@ -75,44 +75,6 @@ $(document).ready(function () {
 
     })
 
-    // Your web app's Firebase configuration
-
-    var config = {
-        apiKey: "AIzaSyDKrVHt43u2axKy28_3Oy1y1mmC9yj1TPU",
-        authDomain: "meal-prep-b23a3.firebaseapp.com",
-        databaseURL: "https://meal-prep-b23a3.firebaseio.com",
-        projectId: "meal-prep-b23a3",
-        storageBucket: "meal-prep-b23a3.appspot.com",
-        messagingSenderId: "413133199350",
-        appId: "1:413133199350:web:7a9b0fdb10a8cabc"
-    };
-
-    // Initialize Firebase
-    firebase.initializeApp(config);
-
-    // Create a variable to reference the database.
-    // var database = firebase.database();
-
-    // login
-    var logInForm = document.querySelector("#user");
-    logInForm.addEventListener("submit", function () {
-        event.preventDefault();
-
-        // get user info
-        var email = $("#user-login").val();
-        var password = $("#user-password").val();
-
-
-        console.log(email);
-
-        // sign up the user
-        database.createUserWithEmailAndPassword(email, password)
-
-    });
-
-
-
-
     //On click of x button, call api for images and nutrient information
     $(document).on("click", ".category", function () {
 
@@ -150,8 +112,16 @@ $(document).ready(function () {
     var explainArray = ["Having pre-prepared meals on hand can also reduce portion size and help you reach your nutrition goals. This way, you’ll avoid unhealthy options like TV dinners or takeout, especially when you’re overwhelmed or exhausted.",
         "And since it requires you to determine what to eat ahead of time, meal prepping can lead to more nutritious meal choices over the long term.",
         "Despite what people may think, there are various ways to meal prep — not all of which involve spending a whole Sunday afternoon cooking dishes for the week to come. You can choose methods that work best for you."]
-    $(document).on("click", "#explaining", function () {
-        
-        for ()
 
+    $("#explaining").on("click", function() {
+
+        console.log("p");
+        
+
+        $("#explaining").fadeOut();
+        $("#explaining").empty();
+        $("#explaining").append(explainArray[0]);
+        explainArray.shift();
+
+    });
 });
