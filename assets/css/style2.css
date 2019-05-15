@@ -33,7 +33,7 @@ body, html {
 }
 
 #mealPrep {
-    border-bottom: 20px solid rgb(52, 185, 152);
+    border-bottom: 20px solid rgb(61, 209, 172);
     color:white;
     display: flex;
     font-family: 'Pathway Gothic One', sans-serif;
@@ -63,3 +63,4 @@ body, html {
     max-width: 600px;
 
 }
+

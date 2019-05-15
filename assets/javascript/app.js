@@ -132,53 +132,11 @@ $(document).ready(function () {
         })
             .then(function (response) {
 
-                // var results = response;
-
                 for (var i = 0; i < response.hits.length; i++) {
                     $("#break-card-img-" + i).append(response.hits[i].recipe.image);
                     $("#break-card-img-" + i).attr("src", response.hits[i].recipe.image);
                     $("#break" + i).prepend(response.hits[i].recipe.label);
                 }
-
-                // $("#break-card-img-1").append(results.hits[1].recipe.image);
-                // $("#break-card-img-1").attr("src", results.hits[1].recipe.image);
-                // $("#breakOne").prepend(results.hits[1].recipe.label);
-
-                // $("#break-card-img-2").append(results.hits[2].recipe.image);
-                // $("#break-card-img-2").attr("src", results.hits[2].recipe.image);
-                // $("#breakTwo").prepend(results.hits[2].recipe.label);
-
-                // $("#break-card-img-3").append(results.hits[3].recipe.image);
-                // $("#break-card-img-3").attr("src", results.hits[3].recipe.image);
-                // $("#breakThree").prepend(results.hits[3].recipe.label);
-                
-                // $("#break-card-img-4").append(results.hits[4].recipe.image);
-                // $("#break-card-img-4").attr("src", results.hits[4].recipe.image);
-                // $("#breakFour").prepend(results.hits[4].recipe.label);
-
-                // $("#break-card-img-5").append(results.hits[5].recipe.image);
-                // $("#break-card-img-5").attr("src", results.hits[5].recipe.image);
-                // $("#breakFive").prepend(results.hits[5].recipe.label);
-
-                // $("#break-card-img-6").append(results.hits[6].recipe.image);
-                // $("#break-card-img-6").attr("src", results.hits[6].recipe.image);
-                // $("#breakSix").prepend(results.hits[6].recipe.label);
-
-                // $("#break-card-img-7").append(results.hits[7].recipe.image);
-                // $("#break-card-img-7").attr("src", results.hits[7].recipe.image);
-                // $("#breakSeven").prepend(results.hits[7].recipe.label);
-
-                // $("#break-card-img-8").append(results.hits[8].recipe.image);
-                // $("#break-card-img-8").attr("src", results.hits[8].recipe.image);
-                // $("#breakEight").prepend(results.hits[8].recipe.label);
-                
-                // $("#break-card-img-9").append(results.hits[9].recipe.image);
-                // $("#break-card-img-9").attr("src", results.hits[9].recipe.image);
-                // $("#breakNine").prepend(results.hits[9].recipe.label);
-
-                // $("#break-card-img-10").append(results.hits[0].recipe.image);
-                // $("#break-card-img-10").attr("src", results.hits[0].recipe.image);
-                // $("#breakTen").prepend(results.hits[0].recipe.label);
 
 
                 console.log(response);
@@ -187,4 +145,13 @@ $(document).ready(function () {
 
             });
     });
+
+
+    var explainArray = ["Having pre-prepared meals on hand can also reduce portion size and help you reach your nutrition goals. This way, you’ll avoid unhealthy options like TV dinners or takeout, especially when you’re overwhelmed or exhausted.",
+        "And since it requires you to determine what to eat ahead of time, meal prepping can lead to more nutritious meal choices over the long term.",
+        "Despite what people may think, there are various ways to meal prep — not all of which involve spending a whole Sunday afternoon cooking dishes for the week to come. You can choose methods that work best for you."]
+    $(document).on("click", "#explaining", function () {
+        
+        for ()
+
 });
