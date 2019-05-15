@@ -23,6 +23,10 @@
     margin-bottom: 0;
 }
 
+#breakfast-button, #lunch-button, #dinner-button, #stats {
+    margin-bottom: 20px;
+}
+
 img {
     height: 100px;
     width: 150px;

@@ -7,7 +7,6 @@ $(document).ready(function () {
     /* Events fired on the drag target */
     document.addEventListener("dragstart", function (event) {
         event.dataTransfer.setData("Text", event.target.id);
-
     });
 
     document.addEventListener("drag", function (event) {
@@ -84,46 +83,8 @@ $(document).ready(function () {
 
     })
 
-    // Your web app's Firebase configuration
-
-    var config = {
-        apiKey: "AIzaSyDKrVHt43u2axKy28_3Oy1y1mmC9yj1TPU",
-        authDomain: "meal-prep-b23a3.firebaseapp.com",
-        databaseURL: "https://meal-prep-b23a3.firebaseio.com",
-        projectId: "meal-prep-b23a3",
-        storageBucket: "meal-prep-b23a3.appspot.com",
-        messagingSenderId: "413133199350",
-        appId: "1:413133199350:web:7a9b0fdb10a8cabc"
-    };
-
-    // Initialize Firebase
-    firebase.initializeApp(config);
-
-    // Create a variable to reference the database.
-    // var database = firebase.database();
-
-    // login
-    var logInForm = document.querySelector("#user");
-    logInForm.addEventListener("submit", function () {
-        event.preventDefault();
-
-        // get user info
-        var email = $("#user-login").val();
-        var password = $("#user-password").val();
-
-
-        console.log(email);
-
-        // sign up the user
-        database.createUserWithEmailAndPassword(email, password)
-
-    });
-
-
-
-
     //On click of x button, call api for images and nutrient information
-    $(document).on("click", ".category", function () {
+    $(document).on("click", "#breakfast-button", function () {
 
         // For breakfast, hide lunch/dinner. For lunch, hide breakfast/dinner. etc..
 
@@ -141,25 +102,114 @@ $(document).ready(function () {
         })
             .then(function (response) {
 
-                var results = response;
+                for (var i = 0; i < response.hits.length; i++) {
+                    $("#break-card-img-" + i).append(response.hits[i].recipe.image);
+                    $("#break-card-img-" + i).attr("src", response.hits[i].recipe.image);
+                    $("#breakfast-food-card-" + i).attr({
+                        "calories": response.hits[i].recipe.calories,
+                        "protein": response.hits[i].recipe.digest[2].total,
+                        "fats": response.hits[i].recipe.digest[0].total,
+                        "carbohydrates": response.hits[i].recipe.digest[1].total,
+                    })
+                    $("#break" + i).prepend(response.hits[i].recipe.label);
+                }
+
+                console.log(response);
+            });
+    });
+
+
+    $(document).on("click", "#lunch-button", function () {
+
+        // For breakfast, hide lunch/dinner. For lunch, hide breakfast/dinner. etc..
+
+
+        // ajax call
+        var apiID = "aee51471";
+        var apiKey = "b4a9d4d9acaf471f9a836e6615157895";
+        var q = "lunch";
+        // var q = on.click on breakfast lunch or dinner dropdown?
+        var queryURL = `https://api.edamam.com/search?q=${q}&app_id=${apiID}&app_key=${apiKey}`
+
+        $.ajax({
+            url: queryURL,
+            method: "GET"
+        })
+            .then(function (response) {
+
+                for (var i = 0; i < response.hits.length; i++) {
+                    $("#lunch-card-img-" + i).append(response.hits[i].recipe.image);
+                    $("#lunch-card-img-" + i).attr("src", response.hits[i].recipe.image);
+                    $("#lunch-food-card-" + i).attr({
+                        "calories": response.hits[i].recipe.calories,
+                        "protein": response.hits[i].recipe.digest[2].total,
+                        "fats": response.hits[i].recipe.digest[0].total,
+                        "carbohydrates": response.hits[i].recipe.digest[1].total,
+                    })
+                    $("#lunch" + i).prepend(response.hits[i].recipe.label);
+                }
+                
                 console.log(response);
 
-                for (i = 0; i < response.hits.length; i++) {
+            });
+    });
 
-                    $("#break-card-img-" + i).append(results.hits[i].recipe.image);
-                    $("#break-card-img-" + i).attr("src", results.hits[i].recipe.image);
-                    $("#breakfast-food-card-" + i).attr({
-                        "calories": results.hits[i].recipe.calories,
-                        "protein": results.hits[i].recipe.digest[2].total,
-                        "fats": results.hits[i].recipe.digest[0].total,
-                        "carbohydrates": results.hits[i].recipe.digest[1].total,
+
+    $(document).on("click", "#dinner-button", function () {
+
+        // For breakfast, hide lunch/dinner. For lunch, hide breakfast/dinner. etc..
+
+
+        // ajax call
+        var apiID = "aee51471";
+        var apiKey = "b4a9d4d9acaf471f9a836e6615157895";
+        var q = "dinner";
+        // var q = on.click on breakfast lunch or dinner dropdown?
+        var queryURL = `https://api.edamam.com/search?q=${q}&app_id=${apiID}&app_key=${apiKey}`
+
+        $.ajax({
+            url: queryURL,
+            method: "GET"
+        })
+            .then(function (response) {
+
+
+                for (var i = 0; i < response.hits.length; i++) {
+
+                    $("#dinner-card-img-" + i).append(response.hits[i].recipe.image);
+                    $("#dinner-card-img-" + i).attr("src", response.hits[i].recipe.image);
+                    $("#dinner-food-card-" + i).attr({
+                        "calories": response.hits[i].recipe.calories,
+                        "protein": response.hits[i].recipe.digest[2].total,
+                        "fats": response.hits[i].recipe.digest[0].total,
+                        "carbohydrates": response.hits[i].recipe.digest[1].total,
                     })
-
-                    $("#break" + i).empty();
-                    $("#break" + i).append(results.hits[i].recipe.label);
+                    $("#dinner" + i).prepend(response.hits[i].recipe.label);
                 }
+                
+                console.log(response);
+                console.log(response.length);
 
 
             });
+    });
+
+
+
+
+    var explainArray = ["Having pre-prepared meals on hand can also reduce portion size and help you reach your nutrition goals. This way, you’ll avoid unhealthy options like TV dinners or takeout, especially when you’re overwhelmed or exhausted.",
+        "And since it requires you to determine what to eat ahead of time, meal prepping can lead to more nutritious meal choices over the long term.",
+        "Despite what people may think, there are various ways to meal prep — not all of which involve spending a whole Sunday afternoon cooking dishes for the week to come. You can choose methods that work best for you."]
+
+    $("#explaining").on("click", function() {
+
+        console.log("p");
+        
+
+        $("#explaining").fadeOut();
+        $("#explaining").empty();
+        $("#explaining").append(explainArray[0]);
+        explainArray.shift();
+
     });
 });
