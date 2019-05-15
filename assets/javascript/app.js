@@ -109,7 +109,7 @@ $(document).ready(function () {
 
 
     //On click of x button, call api for images and nutrient information
-    $(document).on("click", "#calculate", function () {
+    $(document).on("click", "#category", function () {
 
         // For breakfast, hide lunch/dinner. For lunch, hide breakfast/dinner. etc..
 
