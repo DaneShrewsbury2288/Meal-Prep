@@ -114,7 +114,7 @@ $(document).ready(function () {
 
 
     //On click of x button, call api for images and nutrient information
-    $(document).on("click", ".category", function () {
+    $(document).on("click", "#breakfast-button", function () {
 
         // For breakfast, hide lunch/dinner. For lunch, hide breakfast/dinner. etc..
 
@@ -132,52 +132,79 @@ $(document).ready(function () {
         })
             .then(function (response) {
 
-                var results = response;
-
-                $("#break-card-img-1").append(results.hits[1].recipe.image);
-                $("#break-card-img-1").attr("src", results.hits[1].recipe.image);
-                $("#breakOne").prepend(results.hits[1].recipe.label);
-
-                $("#break-card-img-2").append(results.hits[2].recipe.image);
-                $("#break-card-img-2").attr("src", results.hits[2].recipe.image);
-                $("#breakTwo").prepend(results.hits[2].recipe.label);
-
-                $("#break-card-img-3").append(results.hits[3].recipe.image);
-                $("#break-card-img-3").attr("src", results.hits[3].recipe.image);
-                $("#breakThree").prepend(results.hits[3].recipe.label);
-                
-                $("#break-card-img-4").append(results.hits[4].recipe.image);
-                $("#break-card-img-4").attr("src", results.hits[4].recipe.image);
-                $("#breakFour").prepend(results.hits[4].recipe.label);
-
-                $("#break-card-img-5").append(results.hits[5].recipe.image);
-                $("#break-card-img-5").attr("src", results.hits[5].recipe.image);
-                $("#breakFive").prepend(results.hits[5].recipe.label);
-
-                $("#break-card-img-6").append(results.hits[6].recipe.image);
-                $("#break-card-img-6").attr("src", results.hits[6].recipe.image);
-                $("#breakSix").prepend(results.hits[6].recipe.label);
-
-                $("#break-card-img-7").append(results.hits[7].recipe.image);
-                $("#break-card-img-7").attr("src", results.hits[7].recipe.image);
-                $("#breakSeven").prepend(results.hits[7].recipe.label);
-
-                $("#break-card-img-8").append(results.hits[8].recipe.image);
-                $("#break-card-img-8").attr("src", results.hits[8].recipe.image);
-                $("#breakEight").prepend(results.hits[8].recipe.label);
-                
-                $("#break-card-img-9").append(results.hits[9].recipe.image);
-                $("#break-card-img-9").attr("src", results.hits[9].recipe.image);
-                $("#breakNine").prepend(results.hits[9].recipe.label);
-
-                $("#break-card-img-10").append(results.hits[0].recipe.image);
-                $("#break-card-img-10").attr("src", results.hits[0].recipe.image);
-                $("#breakTen").prepend(results.hits[0].recipe.label);
-
+                for (var i = 0; i < response.hits.length; i++) {
+                    $("#break-card-img-" + i).append(response.hits[i].recipe.image);
+                    $("#break-card-img-" + i).attr("src", response.hits[i].recipe.image);
+                    $("#break" + i).prepend(response.hits[i].recipe.label);
+                }
 
                 console.log(response);
 
 
             });
     });
+
+
+    $(document).on("click", "#lunch-button", function () {
+
+        // For breakfast, hide lunch/dinner. For lunch, hide breakfast/dinner. etc..
+
+
+        // ajax call
+        var apiID = "aee51471";
+        var apiKey = "b4a9d4d9acaf471f9a836e6615157895";
+        var q = "lunch";
+        // var q = on.click on breakfast lunch or dinner dropdown?
+        var queryURL = `https://api.edamam.com/search?q=${q}&app_id=${apiID}&app_key=${apiKey}`
+
+        $.ajax({
+            url: queryURL,
+            method: "GET"
+        })
+            .then(function (response) {
+
+                for (var i = 0; i < response.hits.length; i++) {
+                    $("#lunch-card-img-" + i).append(response.hits[i].recipe.image);
+                    $("#lunch-card-img-" + i).attr("src", response.hits[i].recipe.image);
+                    $("#lunch" + i).prepend(response.hits[i].recipe.label);
+                }
+                
+                console.log(response);
+
+
+            });
+    });
+
+
+    $(document).on("click", "#dinner-button", function () {
+
+        // For breakfast, hide lunch/dinner. For lunch, hide breakfast/dinner. etc..
+
+
+        // ajax call
+        var apiID = "aee51471";
+        var apiKey = "b4a9d4d9acaf471f9a836e6615157895";
+        var q = "dinner";
+        // var q = on.click on breakfast lunch or dinner dropdown?
+        var queryURL = `https://api.edamam.com/search?q=${q}&app_id=${apiID}&app_key=${apiKey}`
+
+        $.ajax({
+            url: queryURL,
+            method: "GET"
+        })
+            .then(function (response) {
+
+                for (var i = 0; i < response.hits.length; i++) {
+                    $("#dinner-card-img-" + i).append(response.hits[i].recipe.image);
+                    $("#dinner-card-img-" + i).attr("src", response.hits[i].recipe.image);
+                    $("#dinner" + i).prepend(response.hits[i].recipe.label);
+                }
+                
+                console.log(response);
+
+
+            });
+    });
+
+
 });
