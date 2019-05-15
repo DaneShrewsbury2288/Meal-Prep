@@ -7,7 +7,7 @@ $(document).ready(function () {
     /* Events fired on the drag target */
     document.addEventListener("dragstart", function (event) {
         event.dataTransfer.setData("Text", event.target.id);
-        // event.dataTransfer.setData("Menu"), event.target.
+
     });
 
     document.addEventListener("drag", function (event) {
@@ -31,43 +31,52 @@ $(document).ready(function () {
             var cloneDiv = $("#" + data).clone();
             cloneDiv.attr("id", data);
             $("#" + data).after(cloneDiv);
-
             event.target.appendChild(document.getElementById(data));
             console.log("successful drop")
         }
     });
 
     $("#breakfast-button").on("click", function () {
+
         if ($("#breakfast-menu").is(":hidden")) {
             $("#breakfast-menu").show();
         }
         else {
             $("#breakfast-menu").hide();
         };
+
         $("#lunch-menu").hide();
         $("#dinner-menu").hide();
     });
 
     $("#lunch-button").on("click", function () {
-        $("#breakfast-menu").hide();
+
         if ($("#lunch-menu").is(":hidden")) {
             $("#lunch-menu").show();
         }
         else {
             $("#lunch-menu").hide();
         };
+
+        $("#breakfast-menu").hide();
         $("#dinner-menu").hide();
     });
 
     $("#dinner-button").on("click", function () {
+
         $("#breakfast-menu").hide();
         $("#lunch-menu").hide();
+
         if ($("#dinner-menu").is(":hidden")) {
             $("#dinner-menu").show();
         }
         else {
             $("#dinner-menu").hide();
         };
+    });
+
+    $("#calculate").on("click", function () {
+            
     });
 
     $("#clear").on("click", function () {
@@ -133,49 +142,22 @@ $(document).ready(function () {
             .then(function (response) {
 
                 var results = response;
-
-                $("#break-card-img-1").append(results.hits[1].recipe.image);
-                $("#break-card-img-1").attr("src", results.hits[1].recipe.image);
-                $("#breakOne").prepend(results.hits[1].recipe.label);
-
-                $("#break-card-img-2").append(results.hits[2].recipe.image);
-                $("#break-card-img-2").attr("src", results.hits[2].recipe.image);
-                $("#breakTwo").prepend(results.hits[2].recipe.label);
-
-                $("#break-card-img-3").append(results.hits[3].recipe.image);
-                $("#break-card-img-3").attr("src", results.hits[3].recipe.image);
-                $("#breakThree").prepend(results.hits[3].recipe.label);
-                
-                $("#break-card-img-4").append(results.hits[4].recipe.image);
-                $("#break-card-img-4").attr("src", results.hits[4].recipe.image);
-                $("#breakFour").prepend(results.hits[4].recipe.label);
-
-                $("#break-card-img-5").append(results.hits[5].recipe.image);
-                $("#break-card-img-5").attr("src", results.hits[5].recipe.image);
-                $("#breakFive").prepend(results.hits[5].recipe.label);
-
-                $("#break-card-img-6").append(results.hits[6].recipe.image);
-                $("#break-card-img-6").attr("src", results.hits[6].recipe.image);
-                $("#breakSix").prepend(results.hits[6].recipe.label);
-
-                $("#break-card-img-7").append(results.hits[7].recipe.image);
-                $("#break-card-img-7").attr("src", results.hits[7].recipe.image);
-                $("#breakSeven").prepend(results.hits[7].recipe.label);
-
-                $("#break-card-img-8").append(results.hits[8].recipe.image);
-                $("#break-card-img-8").attr("src", results.hits[8].recipe.image);
-                $("#breakEight").prepend(results.hits[8].recipe.label);
-                
-                $("#break-card-img-9").append(results.hits[9].recipe.image);
-                $("#break-card-img-9").attr("src", results.hits[9].recipe.image);
-                $("#breakNine").prepend(results.hits[9].recipe.label);
-
-                $("#break-card-img-10").append(results.hits[0].recipe.image);
-                $("#break-card-img-10").attr("src", results.hits[0].recipe.image);
-                $("#breakTen").prepend(results.hits[0].recipe.label);
-
-
                 console.log(response);
+
+                for (i = 0; i < response.hits.length; i++) {
+
+                    $("#break-card-img-" + i).append(results.hits[i].recipe.image);
+                    $("#break-card-img-" + i).attr("src", results.hits[i].recipe.image);
+                    $("#breakfast-food-card-" + i).attr({
+                        "calories": results.hits[i].recipe.calories,
+                        "protein": results.hits[i].recipe.digest[2].total,
+                        "fats": results.hits[i].recipe.digest[0].total,
+                        "carbohydrates": results.hits[i].recipe.digest[1].total,
+                    })
+
+                    $("#break" + i).empty();
+                    $("#break" + i).append(results.hits[i].recipe.label);
+                }
 
 
             });

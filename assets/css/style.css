@@ -23,34 +23,25 @@
     margin-bottom: 0;
 }
 
-#food-card {
-    height: 150px;
-    width: 220px;
-    align-content: center;
-    padding: 10px;
-}
-
 img {
     height: 100px;
-    width: 120px;
+    width: 150px;
+    margin-left: 15px;
 }
 
 .dropdown-menu {
-    width: 1090px !important;
-    height: 270px !important;
+    width: 960px !important;
+    height: 330px !important;
 }
 
 .dropdown-menu-right {
     margin-left: 300px;
 }
 
-
-
 #content {
     /* background: rgb(0, 0, 0); Fallback color */
     background: rgba(199, 4, 4, 0.7); /* Black background with 0.5 opacity */
     color: #f1f1f1;
-    
     height:60%;
     width: 100%;
 }
@@ -62,8 +53,12 @@ img {
 }
 
 .card {
-    margin-left: 12px;
-    
+    margin-left: 18px;
+    margin-bottom: 10px;
+}
+
+p {
+    text-align: center;
 }
 
 #calculate {
