@@ -76,7 +76,7 @@ $(document).ready(function () {
     })
 
     //On click of x button, call api for images and nutrient information
-    $(document).on("click", ".category", function () {
+    $(document).on("click", "#breakfast-button", function () {
 
         // For breakfast, hide lunch/dinner. For lunch, hide breakfast/dinner. etc..
 
@@ -100,13 +100,76 @@ $(document).ready(function () {
                     $("#break" + i).prepend(response.hits[i].recipe.label);
                 }
 
+                console.log(response);
 
+
+            });
+    });
+
+
+    $(document).on("click", "#lunch-button", function () {
+
+        // For breakfast, hide lunch/dinner. For lunch, hide breakfast/dinner. etc..
+
+
+        // ajax call
+        var apiID = "aee51471";
+        var apiKey = "b4a9d4d9acaf471f9a836e6615157895";
+        var q = "lunch";
+        // var q = on.click on breakfast lunch or dinner dropdown?
+        var queryURL = `https://api.edamam.com/search?q=${q}&app_id=${apiID}&app_key=${apiKey}`
+
+        $.ajax({
+            url: queryURL,
+            method: "GET"
+        })
+            .then(function (response) {
+
+                for (var i = 0; i < response.hits.length; i++) {
+                    $("#lunch-card-img-" + i).append(response.hits[i].recipe.image);
+                    $("#lunch-card-img-" + i).attr("src", response.hits[i].recipe.image);
+                    $("#lunch" + i).prepend(response.hits[i].recipe.label);
+                }
+                
+                console.log(response);
+
+
+            });
+    });
+
+
+    $(document).on("click", "#dinner-button", function () {
+
+        // For breakfast, hide lunch/dinner. For lunch, hide breakfast/dinner. etc..
+
+
+        // ajax call
+        var apiID = "aee51471";
+        var apiKey = "b4a9d4d9acaf471f9a836e6615157895";
+        var q = "dinner";
+        // var q = on.click on breakfast lunch or dinner dropdown?
+        var queryURL = `https://api.edamam.com/search?q=${q}&app_id=${apiID}&app_key=${apiKey}`
+
+        $.ajax({
+            url: queryURL,
+            method: "GET"
+        })
+            .then(function (response) {
+
+                for (var i = 0; i < response.hits.length; i++) {
+                    $("#dinner-card-img-" + i).append(response.hits[i].recipe.image);
+                    $("#dinner-card-img-" + i).attr("src", response.hits[i].recipe.image);
+                    $("#dinner" + i).prepend(response.hits[i].recipe.label);
+                }
+                
                 console.log(response);
                 console.log(response.length);
 
 
             });
     });
+
+
 
 
     var explainArray = ["Having pre-prepared meals on hand can also reduce portion size and help you reach your nutrition goals. This way, you’ll avoid unhealthy options like TV dinners or takeout, especially when you’re overwhelmed or exhausted.",
