@@ -7,9 +7,11 @@ $(document).ready(function () {
     /* Events fired on the drag target */
     document.addEventListener("dragstart", function (event) {
         event.dataTransfer.setData("Text", event.target.id);
+        // event.dataTransfer.setData("Menu"), event.target.
     });
 
     document.addEventListener("drag", function (event) {
+        event.preventDefault();
         console.log("drag")
     });
 
@@ -22,10 +24,14 @@ $(document).ready(function () {
         event.preventDefault();
         console.log("dropped")
         if (event.target.className == "foodBox droptarget") {
-            var cloneDiv = $("#food-card").clone();
-            cloneDiv.attr("id", "food-card");
-            $("#food-card").after(cloneDiv);
+
             var data = event.dataTransfer.getData("Text");
+            console.log("data stored: " + data);
+
+            var cloneDiv = $("#" + data).clone();
+            cloneDiv.attr("id", data);
+            $("#" + data).after(cloneDiv);
+
             event.target.appendChild(document.getElementById(data));
             console.log("successful drop")
         }
