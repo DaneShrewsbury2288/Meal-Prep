@@ -78,15 +78,6 @@
             </div>
         </form>
 
-        <!-- Card -->
-        <!-- <div id="food-card" class="card" style="width: 13rem;" draggable="true"
-            ondragstart="event.dataTransfer.setData('text/plain', 'Successful drag')">
-            <p class="foodName"> Test Food Name </p> -->
-        <!-- Card image -->
-        <!-- <img class="card-img-top" draggable="false" src="https://mdbootstrap.com/img/Photos/Others/images/49.jpg"
-                alt="Card image cap">
-        </div> -->
-
 
         <br>
 
@@ -95,7 +86,7 @@
                 <div class="column">
                     <p id="weeklyMenuText">Weekly Menu Planner!</p>
                 </div>
-                <!-- <button type="button" class="btn btn-success" id="clear"> Clear! </button> -->
+                <button type="button" class="btn btn-success" id="clear"> Clear all! </button>
                 <button type="button" class="btn btn-success" id="calculate"> Calculate! </button>
             </div>
 
@@ -106,7 +97,7 @@
                 <div class="column btn-group dropup">
                     <button type="button" class="category btn btn-info dropdown-toggle" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false" id="breakfast-button">BREAKFAST</button>
-                    <div class="dropdown-menu" id="breakfast-menu">
+                    <div class="dropdown-menu dropdown-menu-right" id="breakfast-menu">
 
                         <div class="row">
                             <div id="food-card-oatmeal" class="card" style="width: 13rem;" draggable="true">
@@ -178,7 +169,7 @@
                 <div class="column btn-group dropup">
                     <button type="button" class="category btn btn-info dropdown-toggle" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false" id="lunch-button">LUNCH</button>
-                    <div class="dropdown-menu" id="lunch-menu">
+                    <div class="dropdown-menu dropdown-menu-right" id="lunch-menu">
 
                             <div class="row">
                                     <div id="food-card-oatmeal" class="card" style="width: 13rem;" draggable="true">
@@ -249,7 +240,7 @@
                 <div class="column btn-group dropup">
                     <button type="button" class="category btn btn-info dropdown-toggle" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false" id="dinner-button">DINNER</button>
-                    <div class="dropdown-menu" id="dinner-menu">
+                    <div class="dropdown-menu dropdown-menu-right" id="dinner-menu">
 
                             <div class="row">
                                     <div id="food-card-oatmeal" class="card" style="width: 13rem;" draggable="true">
@@ -330,16 +321,16 @@
                     <p class="dayText">SUNDAY</p>
                 </div>
                 <div class="column">
-                    <div class="foodBox droptarget"> </div>
+                    <div class="foodBox droptarget" id="sunday-breakfast"> </div>
                 </div>
                 <div class="column">
-                    <div class="foodBox droptarget"></div>
+                    <div class="foodBox droptarget" id="sunday-lunch"></div>
                 </div>
                 <div class="column">
-                    <div class="foodBox droptarget"></div>
+                    <div class="foodBox droptarget"id="sunday-dinner"></div>
                 </div>
                 <div class="column">
-                    <div class="foodBox droptarget">
+                    <div class="foodBox">
                         <div class="statsBox">
                             <p>Calories: <span></span>
                                 <br>
@@ -359,16 +350,16 @@
                     <p class="dayText">MONDAY</p>
                 </div>
                 <div class="column">
-                    <div class="foodBox droptarget"></div>
+                    <div class="foodBox droptarget" id="monday-breakfast"></div>
                 </div>
                 <div class="column">
-                    <div class="foodBox droptarget"></div>
+                    <div class="foodBox droptarget" id="monday-lunch"></div>
                 </div>
                 <div class="column">
-                    <div class="foodBox droptarget"></div>
+                    <div class="foodBox droptarget" id="monday-dinner"></div>
                 </div>
                 <div class="column">
-                    <div class="foodBox droptarget">
+                    <div class="foodBox">
                         <div class="statsBox">
                             <p>Calories: <span></span>
                                 <br>
@@ -388,13 +379,13 @@
                     <p class="dayText">TUESDAY</p>
                 </div>
                 <div class="column">
-                    <div class="foodBox droptarget"></div>
+                    <div class="foodBox droptarget" id="tuesday-breakfast"></div>
                 </div>
                 <div class="column">
-                    <div class="foodBox droptarget"></div>
+                    <div class="foodBox droptarget" id="tuesday-lunch"></div>
                 </div>
                 <div class="column">
-                    <div class="foodBox droptarget"></div>
+                    <div class="foodBox droptarget" id="tuesday-dinner"></div>
                 </div>
                 <div class="column">
                     <div class="foodBox">
@@ -417,13 +408,13 @@
                     <p class="dayText">WEDNESDAY</p>
                 </div>
                 <div class="column">
-                    <div class="foodBox droptarget"></div>
+                    <div class="foodBox droptarget" id="wednesday-breakfast"></div>
                 </div>
                 <div class="column">
-                    <div class="foodBox droptarget"></div>
+                    <div class="foodBox droptarget" id="wednesday-lunch"></div>
                 </div>
                 <div class="column">
-                    <div class="foodBox droptarget"></div>
+                    <div class="foodBox droptarget" id="wednesday-dinner"></div>
                 </div>
                 <div class="column">
                     <div class="foodBox">
@@ -446,13 +437,13 @@
                     <p class="dayText">THURSDAY</p>
                 </div>
                 <div class="column">
-                    <div class="foodBox droptarget"></div>
+                    <div class="foodBox droptarget" id="thursday-breakfast"></div>
                 </div>
                 <div class="column">
-                    <div class="foodBox droptarget"></div>
+                    <div class="foodBox droptarget" id="thursday-lunch"></div>
                 </div>
                 <div class="column">
-                    <div class="foodBox droptarget"></div>
+                    <div class="foodBox droptarget" id="thursday-dinner"></div>
                 </div>
                 <div class="column">
                     <div class="foodBox">
@@ -475,13 +466,13 @@
                     <p class="dayText">FRIDAY</p>
                 </div>
                 <div class="column">
-                    <div class="foodBox droptarget"></div>
+                    <div class="foodBox droptarget" id="friday-breakfast"></div>
                 </div>
                 <div class="column">
-                    <div class="foodBox droptarget"></div>
+                    <div class="foodBox droptarget" id="friday-lunch"></div>
                 </div>
                 <div class="column">
-                    <div class="foodBox droptarget"></div>
+                    <div class="foodBox droptarget" id="friday-dinner"></div>
                 </div>
                 <div class="column">
                     <div class="foodBox">
@@ -504,13 +495,13 @@
                     <p class="dayText">SATURDAY</p>
                 </div>
                 <div class="column">
-                    <div class="foodBox droptarget"></div>
+                    <div class="foodBox droptarget" id="saturday-breakfast"></div>
                 </div>
                 <div class="column">
-                    <div class="foodBox droptarget"></div>
+                    <div class="foodBox droptarget" id="saturday-lunch"></div>
                 </div>
                 <div class="column">
-                    <div class="foodBox droptarget"></div>
+                    <div class="foodBox droptarget" id="saturday-dinner"></div>
                 </div>
                 <div class="column">
                     <div class="foodBox">

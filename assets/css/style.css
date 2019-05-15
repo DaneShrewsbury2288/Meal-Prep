@@ -33,13 +33,18 @@
 img {
     height: 100px;
     width: 120px;
-
 }
 
 .dropdown-menu {
-    width: 1100px !important;
-    height: 300px !important;
+    width: 1090px !important;
+    height: 270px !important;
 }
+
+.dropdown-menu-right {
+    margin-left: 300px;
+}
+
+
 
 #content {
     /* background: rgb(0, 0, 0); Fallback color */
@@ -56,9 +61,24 @@ img {
     margin-top: 30px;
 }
 
+.card {
+    margin-left: 12px;
+    
+}
+
 #calculate {
     float: right;
-    margin-left: 55%;
+    margin-right: 0;
+    margin-left: 10%;
+    width: 150px;
+    height: 50px;
+    margin-top: 10px;
+}
+
+#clear {
+    float: right;
+    margin-right: 0;
+    margin-left: 30%;
     width: 150px;
     height: 50px;
     margin-top: 10px;
