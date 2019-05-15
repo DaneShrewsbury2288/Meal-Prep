@@ -137,6 +137,7 @@ $(document).ready(function () {
                     $("#break-card-img-" + i).attr("src", response.hits[i].recipe.image);
                     $("#break" + i).prepend(response.hits[i].recipe.label);
                 }
+<<<<<<< HEAD
 
                 console.log(response);
 
@@ -171,6 +172,8 @@ $(document).ready(function () {
                 
                 console.log(response);
 
+=======
+>>>>>>> 7fa6efb8062ad994a153c302f9fd1bd2a98d794e
 
             });
     });
@@ -201,10 +204,21 @@ $(document).ready(function () {
                 }
                 
                 console.log(response);
+                console.log(response.length);
 
 
             });
     });
 
 
+<<<<<<< HEAD
+=======
+    var explainArray = ["Having pre-prepared meals on hand can also reduce portion size and help you reach your nutrition goals. This way, you’ll avoid unhealthy options like TV dinners or takeout, especially when you’re overwhelmed or exhausted.",
+        "And since it requires you to determine what to eat ahead of time, meal prepping can lead to more nutritious meal choices over the long term.",
+        "Despite what people may think, there are various ways to meal prep — not all of which involve spending a whole Sunday afternoon cooking dishes for the week to come. You can choose methods that work best for you."]
+    $(document).on("click", "#explaining", function () {
+        
+        for ()
+
+>>>>>>> 7fa6efb8062ad994a153c302f9fd1bd2a98d794e
 });

@@ -33,13 +33,15 @@ body, html {
 }
 
 #mealPrep {
-    border-bottom: 20px solid rgb(52, 185, 152);
+    border-bottom: 20px solid rgb(61, 209, 172);
     color:white;
+    display: flex;
     font-family: 'Pathway Gothic One', sans-serif;
     font-size: 150px;
+    justify-content: center;
     max-height: 200px;
-    max-width: 605px;
-    margin: 0 0 0 20px;
+    max-width: 570px;
+    margin: 0 0 0 50px;
 }
 
 #getStarted {
@@ -51,3 +53,14 @@ body, html {
     margin:150px auto 0 auto;
     width: 600px;
 }
+
+#explaining {
+    color:white;
+    display: flex;
+    font-size:30px;
+    justify-content: center;
+    margin:100px auto 0 55px;
+    max-width: 600px;
+
+}
+
