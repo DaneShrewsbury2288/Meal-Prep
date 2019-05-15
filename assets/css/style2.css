@@ -1,0 +1,53 @@
+body, html {
+    height:100%;
+    width:100%;
+}
+
+.row {
+    height:100%;
+}
+
+
+#introImage {
+    background-image: url("../images/intro2.jpg");
+    background-repeat:no-repeat;
+    background-size: cover;
+    height:100%;
+    object-fit: contain;
+}
+
+#titlePage {
+    background: rgb(94, 218, 187);
+    height:100%;
+    width:100%;
+}
+
+#weekly {
+    color:white;
+    font-family: 'Courgette', cursive;
+    font-size:90px;
+    left:2%;
+    margin:0;
+    position: relative;
+    top:10%;
+}
+
+#mealPrep {
+    border-bottom: 20px solid rgb(52, 185, 152);
+    color:white;
+    font-family: 'Pathway Gothic One', sans-serif;
+    font-size: 150px;
+    max-height: 200px;
+    max-width: 605px;
+    margin: 0 0 0 20px;
+}
+
+#getStarted {
+    border: 5px solid white;
+    color:white;
+    display: flex;
+    font-size:50px;
+    justify-content: center;
+    margin:150px auto 0 auto;
+    width: 600px;
+}
