@@ -33,7 +33,7 @@ $(document).ready(function () {
 
             var cloneDiv = $("#" + data).clone();
             cloneDiv.attr("id", data);
-            $("#"+ data).after(cloneDiv);
+            $("#" + data).after(cloneDiv);
             console.log(cloneDiv)
 
             event.target.appendChild(document.getElementById(data));
@@ -124,6 +124,31 @@ $(document).ready(function () {
     };
 
 
+    //On click of submit next to input form, AJAX request for user input
+    $(document).on("click", "examplesubmitbutton", function () {
+        var apiID = "aee51471";
+        var apiKey = "b4a9d4d9acaf471f9a836e6615157895";
+        var input = document.getElementById("searchAPI").value("");
+        var userinput = input;  
+        var queryURL = `https://api.edamam.com/search?q=${userinput}&app_id=${apiID}&app_key=${apiKey}`
+
+        $.ajax({
+            url: queryURL,
+            method: "GET"
+        })
+            .then(function (response) { 
+
+
+                
+            }
+
+
+
+            );
+    });
+
+
+
 
 
     //On click of x button, call api for images and nutrient information
@@ -135,7 +160,7 @@ $(document).ready(function () {
         // ajax call
         var apiID = "aee51471";
         var apiKey = "b4a9d4d9acaf471f9a836e6615157895";
-        var q = "chicken";
+        var q = "breakfast";
         // var q = on.click on breakfast lunch or dinner dropdown?
         var queryURL = `https://api.edamam.com/search?q=${q}&app_id=${apiID}&app_key=${apiKey}`
 
@@ -239,8 +264,8 @@ $(document).ready(function () {
             });
     });
 
-    $(window).resize(function(){
-        if(window.innerWidth < 500) {
+    $(window).resize(function () {
+        if (window.innerWidth < 500) {
             $("#introImage").remove();
 
         }
@@ -249,7 +274,7 @@ $(document).ready(function () {
 
 
 
-    var explainArray = ["", "Having pre-prepared meals on hand can also reduce portion size and help you reach your nutrition goals. This way, you’ll avoid unhealthy options like TV dinners or takeout, especially when you’re overwhelmed or exhausted.","But tracking those calories and nutrients can be difficult, so we prepared a way for you to do it on the next page!"]
+    var explainArray = ["", "Having pre-prepared meals on hand can also reduce portion size and help you reach your nutrition goals. This way, you’ll avoid unhealthy options like TV dinners or takeout, especially when you’re overwhelmed or exhausted.", "But tracking those calories and nutrients can be difficult, so we prepared a way for you to do it on the next page!"]
 
     $("#explaining").on("click", function () {
 
@@ -268,7 +293,7 @@ $(document).ready(function () {
                 explainArray.shift();
                 console.log(explainArray);
             }
-            
+
             for (var i = 0; i < 1; i++) {
                 $("#explaining").fadeOut();
                 setTimeout(delay, 500);
