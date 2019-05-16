@@ -124,11 +124,18 @@ $(document).ready(function () {
     };
 
 
+    //Prevents refresh on clicking submit button
+    $('#submitbutton').click(function (e) {
+
+        e.preventDefault();
+    });
+
+
     //On click of submit next to input form, AJAX request for user input
-    $(document).on("click", "examplesubmitbutton", function () {
+    $(document).on("click", "#submitbutton", function () {
         var apiID = "aee51471";
         var apiKey = "b4a9d4d9acaf471f9a836e6615157895";
-        var input = document.getElementById("searchAPI").value("");
+        var input = document.getElementById("searchAPI").value;
         var userinput = input;  
         var queryURL = `https://api.edamam.com/search?q=${userinput}&app_id=${apiID}&app_key=${apiKey}`
 
@@ -136,10 +143,11 @@ $(document).ready(function () {
             url: queryURL,
             method: "GET"
         })
-            .then(function (response) { 
+            .then(function (response) {
+                console.log(response);
+                $("#imgtest").attr("src", response.hits[1].recipe.image);
 
 
-                
             }
 
 
