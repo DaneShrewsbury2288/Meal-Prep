@@ -6,11 +6,13 @@
 
 .display-4 {
     font-family: 'Pathway Gothic One', sans-serif;
-    font-size:70px;
+    font-size:120px;
 }
 
 li {
     font-size:23px;
+    font-family: 'Istok Web', sans-serif;
+
 }
 
 .btn-color {
@@ -155,7 +157,7 @@ h1 {
 }
 
 .dayText {
-    font-family: 'Noto Sans JP', sans-serif;
+    font-family: 'Istok Web', sans-serif;
     font-size: 28px;
     position: relative;
     text-align: center;

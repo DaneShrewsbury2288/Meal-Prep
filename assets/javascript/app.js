@@ -119,12 +119,6 @@ $(document).ready(function () {
         $(".droptarget").empty();
     })
 
-    function calculate() {
-
-    };
-
-
-
 
     //On click of x button, call api for images and nutrient information
     $(document).on("click", "#breakfast-button", function () {
@@ -165,9 +159,6 @@ $(document).ready(function () {
 
     $(document).on("click", "#lunch-button", function () {
 
-        // For breakfast, hide lunch/dinner. For lunch, hide breakfast/dinner. etc..
-
-
         // ajax call
         var apiID = "aee51471";
         var apiKey = "b4a9d4d9acaf471f9a836e6615157895";
@@ -202,9 +193,6 @@ $(document).ready(function () {
 
     $(document).on("click", "#dinner-button", function () {
 
-        // For breakfast, hide lunch/dinner. For lunch, hide breakfast/dinner. etc..
-
-
         // ajax call
         var apiID = "aee51471";
         var apiKey = "b4a9d4d9acaf471f9a836e6615157895";
@@ -233,8 +221,6 @@ $(document).ready(function () {
                 }
 
                 console.log(response);
-                console.log(response.length);
-
 
             });
     });
@@ -249,7 +235,7 @@ $(document).ready(function () {
 
 
 
-    var explainArray = ["", "Having pre-prepared meals on hand can also reduce portion size and help you reach your nutrition goals. This way, you’ll avoid unhealthy options like TV dinners or takeout, especially when you’re overwhelmed or exhausted.","But tracking those calories and nutrients can be difficult, so we prepared a way for you to do it on the next page!"]
+    var explainArray = ["", "Having pre-prepared meals on hand can also reduce portion size and help you reach your nutrition goals. This way, you’ll avoid unhealthy options like TV dinners or takeout, especially when you’re overwhelmed or exhausted.","But tracking those calories and nutrients can be tedious, so we prepared a way for you to do it on the next page!"]
 
     $("#explaining").on("click", function () {
 
