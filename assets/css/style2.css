@@ -7,12 +7,10 @@ body, html {
     height:100%;
 }
 
-
 #introImage {
     background-image: url("../images/intro2.jpg");
     background-repeat:no-repeat;
-    background-size: cover;
-    height:100%;
+    background-size: 100% 100%;
     object-fit: contain;
 }
 
@@ -20,16 +18,6 @@ body, html {
     background: rgb(94, 218, 187);
     height:100%;
     width:100%;
-}
-
-#weekly {
-    color:white;
-    font-family: 'Courgette', cursive;
-    font-size:90px;
-    left:2%;
-    margin:0;
-    position: relative;
-    top:10%;
 }
 
 #mealPrep {
@@ -41,7 +29,7 @@ body, html {
     justify-content: center;
     max-height: 200px;
     max-width: 570px;
-    margin: 0 0 0 50px;
+    margin: 0 auto 0 auto;
 }
 
 #getStarted {
@@ -50,17 +38,96 @@ body, html {
     display: flex;
     font-size:50px;
     justify-content: center;
-    margin:150px auto 0 auto;
+    margin:50px auto 0 auto;
     width: 600px;
+    bottom:5%;
+    left: 10%;
+    position: absolute;
+}
+
+/* #getStartedDiv {
+    bottom:5%;
+    left: 10%;
+    position: absolute;
+} */
+
+#moreInfo {
+    bottom:20%;
+    color:white;
+    font-family: 'Shadows Into Light Two', cursive;
+    font-size:25px;
+    left:60%;
+    position: absolute;
 }
 
 #explaining {
     color:white;
     display: flex;
-    font-size:30px;
+    font-family: 'Istok Web', sans-serif;
+    font-size:25px;
+    font-weight: 600;
+    height:268px;
     justify-content: center;
-    margin:100px auto 0 55px;
+    margin:50px auto 0 auto;
     max-width: 600px;
 
 }
 
+
+
+/* Media Queries */
+@media (max-width: 992px) {
+
+    #mealPrep{
+        font-size: 100px;
+    }
+
+    #explaining {
+        font-size: 25px;
+    }
+
+    #moreInfo {
+        font-size:18px;
+    }
+
+    #getStarted {
+        font-size:30px;
+        width:400px;
+    }
+
+}
+  
+@media (max-width: 768px) {
+  
+
+
+}
+  
+@media (max-width: 640px) {
+  
+
+  
+}
+
+@media (max-width: 426px) {
+
+    .titlePage {
+        flex: 100%;
+        width: 100%;
+    }
+
+    #explaining {
+        font-size: 20px;
+    }
+
+    #moreInfo {
+        font-size:18px;
+    }
+
+    #getStarted {
+        font-size:25px;
+        width:380px;
+    }
+
+}
+  

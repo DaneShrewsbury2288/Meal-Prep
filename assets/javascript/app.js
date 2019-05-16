@@ -5,8 +5,6 @@ $(document).ready(function () {
     $("#lunch-menu").hide();
     $("#dinner-menu").hide();
 
-
-
     /* Events fired on the drag target */
     document.addEventListener("dragstart", function (event) {
         event.dataTransfer.setData("Text", event.target.id);
@@ -241,22 +239,42 @@ $(document).ready(function () {
             });
     });
 
+    $(window).resize(function(){
+        if(window.innerWidth < 500) {
+            $("#introImage").remove();
+
+        }
+    });
 
 
 
-    var explainArray = ["Having pre-prepared meals on hand can also reduce portion size and help you reach your nutrition goals. This way, you’ll avoid unhealthy options like TV dinners or takeout, especially when you’re overwhelmed or exhausted.",
-        "And since it requires you to determine what to eat ahead of time, meal prepping can lead to more nutritious meal choices over the long term.",
-        "Despite what people may think, there are various ways to meal prep — not all of which involve spending a whole Sunday afternoon cooking dishes for the week to come. You can choose methods that work best for you."]
+
+    var explainArray = ["", "Having pre-prepared meals on hand can also reduce portion size and help you reach your nutrition goals. This way, you’ll avoid unhealthy options like TV dinners or takeout, especially when you’re overwhelmed or exhausted.","But tracking those calories and nutrients can be difficult, so we prepared a way for you to do it on the next page!"]
 
     $("#explaining").on("click", function () {
 
         console.log("p");
+        console.log(explainArray);
 
+        if (explainArray.length === 1) {
+            $("#moreInfo").fadeOut();
+        }
 
-        $("#explaining").fadeOut();
-        $("#explaining").empty();
-        $("#explaining").append(explainArray[0]);
-        explainArray.shift();
+        else {
+
+            function delay() {
+                $("#explaining").text(explainArray[i]);
+                $("#explaining").fadeIn();
+                explainArray.shift();
+                console.log(explainArray);
+            }
+            
+            for (var i = 0; i < 1; i++) {
+                $("#explaining").fadeOut();
+                setTimeout(delay, 500);
+            }
+
+        }
 
     });
 });
