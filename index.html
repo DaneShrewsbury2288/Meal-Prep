@@ -52,25 +52,6 @@
     </div>
 
 
-    <form id="user">
-
-        <div class="card bg-light mb-3" id="user-card">
-
-            <div class="form-group">
-
-                <input type="text" id="user-login" class="fadeIn second" name="login" placeholder="User Name">
-            </div>
-
-            <div class="form-group">
-
-                <input type="text" id="user-password" class="fadeIn second" name="password" placeholder="Password">
-
-            </div>
-
-            <input type="submit" id="login-button" class="fadeIn fourth" value="Log In">
-
-        </div>
-    </form> -->
     <div id="searchresultsdiv" style="text-align: center">
         <img id="imgtest">
         
@@ -84,16 +65,17 @@
             </div>
             <button type="button" class="btn btn-success btn-color" id="clear"> Clear all! </button>
             <button type="button" class="btn btn-success btn-color" id="calculate"> Calculate! </button>
+            <form>
+                <input style="border-color: black" type="text" id="searchAPI" placeholder="Enter your search here">
+                <input id="submitbutton" style="margin: 5px; border-color: black" type="submit">
+            </form>
         </div>
 
         <br>
 
         <div class="row">
             <div class="col-2">
-                <form>
-                    <input style="border-color: black" type="text" id="searchAPI" placeholder="Enter your search here">
-                    <input id="submitbutton" style="margin: 5px; border-color: black" type="submit">
-                </form>
+
             </div>
             <div class="column btn-group dropup">
 
@@ -297,7 +279,7 @@
 
         <div class="row day" id="sunday">
             <div class="col-2">
-                <p class="dayText">SUNDAY</p>
+                <p class="dayText">SUN</p>
             </div>
             <div class="column">
                 <div class="foodBox droptarget" id="sunday-breakfast"> </div>
@@ -326,7 +308,7 @@
 
         <div class="row day" id="monday">
             <div class="col-2">
-                <p class="dayText">MONDAY</p>
+                <p class="dayText">MON</p>
             </div>
             <div class="column">
                 <div class="foodBox droptarget" id="monday-breakfast"></div>
@@ -355,7 +337,7 @@
 
         <div class="row day" id="tuesday">
             <div class="col-2">
-                <p class="dayText">TUESDAY</p>
+                <p class="dayText">TUES</p>
             </div>
             <div class="column">
                 <div class="foodBox droptarget" id="tuesday-breakfast"></div>
@@ -384,7 +366,7 @@
 
         <div class="row day" id="wednesday">
             <div class="col-2">
-                <p class="dayText">WEDNESDAY</p>
+                <p class="dayText">WED</p>
             </div>
             <div class="column">
                 <div class="foodBox droptarget" id="wednesday-breakfast"></div>
@@ -413,7 +395,7 @@
 
         <div class="row day" id="thursday">
             <div class="col-2">
-                <p class="dayText">THURSDAY</p>
+                <p class="dayText">THUR</p>
             </div>
             <div class="column">
                 <div class="foodBox droptarget" id="thursday-breakfast"></div>
@@ -442,7 +424,7 @@
 
         <div class="row day" id="friday">
             <div class="col-2">
-                <p class="dayText">FRIDAY</p>
+                <p class="dayText">FRI</p>
             </div>
             <div class="column">
                 <div class="foodBox droptarget" id="friday-breakfast"></div>
@@ -471,7 +453,7 @@
 
         <div class="row day" id="saturday">
             <div class="col-2">
-                <p class="dayText">SATURDAY</p>
+                <p class="dayText">SAT</p>
             </div>
             <div class="column">
                 <div class="foodBox droptarget" id="saturday-breakfast"></div>

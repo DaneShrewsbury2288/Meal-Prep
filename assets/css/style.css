@@ -193,3 +193,26 @@ h1 {
 #weeklyMenuText {
     font-size: 35px;
 }
+
+
+
+@media (max-width: 426px) {
+
+    .display-4 {
+        font-size: 40px;
+    }
+
+    li {
+        font-size: 18px;
+    }
+
+    .foodBox {
+    height: 100px;
+    width: 65px;
+
+    }
+    
+    .dayText {
+        font-size: 15px;
+    }
+}
