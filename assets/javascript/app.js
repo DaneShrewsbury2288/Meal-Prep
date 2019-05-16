@@ -33,7 +33,7 @@ $(document).ready(function () {
 
             var cloneDiv = $("#" + data).clone();
             cloneDiv.attr("id", data);
-            $("#"+ data).after(cloneDiv);
+            $("#" + data).after(cloneDiv);
             console.log(cloneDiv)
 
             event.target.appendChild(document.getElementById(data));
@@ -119,6 +119,45 @@ $(document).ready(function () {
         $(".droptarget").empty();
     })
 
+    function calculate() {
+
+    };
+
+
+    //Prevents refresh on clicking submit button
+    $('#submitbutton').click(function (e) {
+
+        e.preventDefault();
+    });
+
+
+    //On click of submit next to input form, AJAX request for user input
+    $(document).on("click", "#submitbutton", function () {
+        var apiID = "aee51471";
+        var apiKey = "b4a9d4d9acaf471f9a836e6615157895";
+        var input = document.getElementById("searchAPI").value;
+        var userinput = input;  
+        var queryURL = `https://api.edamam.com/search?q=${userinput}&app_id=${apiID}&app_key=${apiKey}`
+
+        $.ajax({
+            url: queryURL,
+            method: "GET"
+        })
+            .then(function (response) {
+                console.log(response);
+                $("#imgtest").attr("src", response.hits[1].recipe.image);
+
+
+            }
+
+
+
+            );
+    });
+
+
+
+
 
     //On click of x button, call api for images and nutrient information
     $(document).on("click", "#breakfast-button", function () {
@@ -129,7 +168,7 @@ $(document).ready(function () {
         // ajax call
         var apiID = "aee51471";
         var apiKey = "b4a9d4d9acaf471f9a836e6615157895";
-        var q = "chicken";
+        var q = "breakfast";
         // var q = on.click on breakfast lunch or dinner dropdown?
         var queryURL = `https://api.edamam.com/search?q=${q}&app_id=${apiID}&app_key=${apiKey}`
 
@@ -225,8 +264,8 @@ $(document).ready(function () {
             });
     });
 
-    $(window).resize(function(){
-        if(window.innerWidth < 500) {
+    $(window).resize(function () {
+        if (window.innerWidth < 500) {
             $("#introImage").remove();
 
         }
@@ -254,7 +293,7 @@ $(document).ready(function () {
                 explainArray.shift();
                 console.log(explainArray);
             }
-            
+
             for (var i = 0; i < 1; i++) {
                 $("#explaining").fadeOut();
                 setTimeout(delay, 500);
