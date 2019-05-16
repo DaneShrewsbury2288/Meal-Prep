@@ -7,7 +7,6 @@ $(document).ready(function () {
     /* Events fired on the drag target */
     document.addEventListener("dragstart", function (event) {
         event.dataTransfer.setData("Text", event.target.id);
-        // event.dataTransfer.setData("Menu"), event.target.
     });
 
     document.addEventListener("drag", function (event) {
@@ -31,43 +30,52 @@ $(document).ready(function () {
             var cloneDiv = $("#" + data).clone();
             cloneDiv.attr("id", data);
             $("#" + data).after(cloneDiv);
-
             event.target.appendChild(document.getElementById(data));
             console.log("successful drop")
         }
     });
 
     $("#breakfast-button").on("click", function () {
+
         if ($("#breakfast-menu").is(":hidden")) {
             $("#breakfast-menu").show();
         }
         else {
             $("#breakfast-menu").hide();
         };
+
         $("#lunch-menu").hide();
         $("#dinner-menu").hide();
     });
 
     $("#lunch-button").on("click", function () {
-        $("#breakfast-menu").hide();
+
         if ($("#lunch-menu").is(":hidden")) {
             $("#lunch-menu").show();
         }
         else {
             $("#lunch-menu").hide();
         };
+
+        $("#breakfast-menu").hide();
         $("#dinner-menu").hide();
     });
 
     $("#dinner-button").on("click", function () {
+
         $("#breakfast-menu").hide();
         $("#lunch-menu").hide();
+
         if ($("#dinner-menu").is(":hidden")) {
             $("#dinner-menu").show();
         }
         else {
             $("#dinner-menu").hide();
         };
+    });
+
+    $("#calculate").on("click", function () {
+            
     });
 
     $("#clear").on("click", function () {
@@ -97,12 +105,16 @@ $(document).ready(function () {
                 for (var i = 0; i < response.hits.length; i++) {
                     $("#break-card-img-" + i).append(response.hits[i].recipe.image);
                     $("#break-card-img-" + i).attr("src", response.hits[i].recipe.image);
+                    $("#breakfast-food-card-" + i).attr({
+                        "calories": response.hits[i].recipe.calories,
+                        "protein": response.hits[i].recipe.digest[2].total,
+                        "fats": response.hits[i].recipe.digest[0].total,
+                        "carbohydrates": response.hits[i].recipe.digest[1].total,
+                    })
                     $("#break" + i).prepend(response.hits[i].recipe.label);
                 }
 
                 console.log(response);
-
-
             });
     });
 
@@ -128,11 +140,16 @@ $(document).ready(function () {
                 for (var i = 0; i < response.hits.length; i++) {
                     $("#lunch-card-img-" + i).append(response.hits[i].recipe.image);
                     $("#lunch-card-img-" + i).attr("src", response.hits[i].recipe.image);
+                    $("#lunch-food-card-" + i).attr({
+                        "calories": response.hits[i].recipe.calories,
+                        "protein": response.hits[i].recipe.digest[2].total,
+                        "fats": response.hits[i].recipe.digest[0].total,
+                        "carbohydrates": response.hits[i].recipe.digest[1].total,
+                    })
                     $("#lunch" + i).prepend(response.hits[i].recipe.label);
                 }
                 
                 console.log(response);
-
 
             });
     });
@@ -156,9 +173,17 @@ $(document).ready(function () {
         })
             .then(function (response) {
 
+
                 for (var i = 0; i < response.hits.length; i++) {
+
                     $("#dinner-card-img-" + i).append(response.hits[i].recipe.image);
                     $("#dinner-card-img-" + i).attr("src", response.hits[i].recipe.image);
+                    $("#dinner-food-card-" + i).attr({
+                        "calories": response.hits[i].recipe.calories,
+                        "protein": response.hits[i].recipe.digest[2].total,
+                        "fats": response.hits[i].recipe.digest[0].total,
+                        "carbohydrates": response.hits[i].recipe.digest[1].total,
+                    })
                     $("#dinner" + i).prepend(response.hits[i].recipe.label);
                 }
                 
