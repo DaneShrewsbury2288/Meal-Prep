@@ -1,5 +1,6 @@
 $(document).ready(function () {
 
+    // Hide the meal menus at the beginning
     $("#breakfast-menu").hide();
     $("#lunch-menu").hide();
     $("#dinner-menu").hide();
@@ -11,7 +12,6 @@ $(document).ready(function () {
 
     document.addEventListener("drag", function (event) {
         event.preventDefault();
-        console.log("drag")
     });
 
     /* Events fired on the drop target */
@@ -19,18 +19,25 @@ $(document).ready(function () {
         event.preventDefault();
     });
 
+    // Events fired on the actual drop event
     document.addEventListener("drop", function (event) {
         event.preventDefault();
         console.log("dropped")
+
         if (event.target.className == "foodBox droptarget") {
 
             var data = event.dataTransfer.getData("Text");
+            var calories = event.dataTransfer.getData("Calories");
+            console.log("Calories" + calories);
             console.log("data stored: " + data);
 
             var cloneDiv = $("#" + data).clone();
             cloneDiv.attr("id", data);
-            $("#" + data).after(cloneDiv);
+            $("#"+ data).after(cloneDiv);
+            console.log(cloneDiv)
+
             event.target.appendChild(document.getElementById(data));
+
             console.log("successful drop")
         }
     });
@@ -75,13 +82,49 @@ $(document).ready(function () {
     });
 
     $("#calculate").on("click", function () {
-            
+        console.log("Calculated!")
+
+        var sundayBreakfastCalories = $("#sunday-breakfast").children().attr("calories");
+        var sundayLunchCalories = $("#sunday-lunch").children().attr("calories");
+        var sundayDinnerCalories = $("#sunday-dinner").children().attr("calories");
+
+        var sundayCalories = Math.round((+sundayBreakfastCalories) + (+sundayLunchCalories) + (+sundayDinnerCalories));
+
+        var sundayBreakfastProtein = $("#sunday-breakfast").children().attr("protein");
+        var sundayLunchProtein = $("#sunday-lunch").children().attr("protein");
+        var sundayDinnerProtein = $("#sunday-dinner").children().attr("protein");
+
+        var sundayProtein = Math.round((+sundayBreakfastProtein) + (+sundayLunchProtein) + (+sundayDinnerProtein));
+
+        var sundayBreakfastCarbs = $("#sunday-breakfast").children().attr("carbohydrates");
+        var sundayLunchCarbs = $("#sunday-lunch").children().attr("carbohydrates");
+        var sundayDinnerCarbs = $("#sunday-dinner").children().attr("carbohydrates");
+
+        var sundayCarbs = Math.round((+sundayBreakfastCarbs) + (+sundayLunchCarbs) + (+sundayDinnerCarbs));
+
+        var sundayBreakfastFats = $("#sunday-breakfast").children().attr("fats");
+        var sundayLunchFats = $("#sunday-lunch").children().attr("fats");
+        var sundayDinnerFats = $("#sunday-dinner").children().attr("fats");
+
+        var sundayFats = Math.round((+sundayBreakfastFats) + (+sundayLunchFats) + (+sundayDinnerFats));
+
+        $("#sunday-stats").empty().append("Calories: " + sundayCalories + "<br>");
+        $("#sunday-stats").append("Protein: " + sundayProtein + "g" + "<br>");
+        $("#sunday-stats").append("Carbs: " + sundayCarbs + "g" + "<br>");
+        $("#sunday-stats").append("Fats: " + sundayFats + "g" + "<br>");
+
     });
 
     $("#clear").on("click", function () {
         $(".droptarget").empty();
-
     })
+
+    function calculate() {
+
+    };
+
+
+
 
     //On click of x button, call api for images and nutrient information
     $(document).on("click", "#breakfast-button", function () {
@@ -103,6 +146,7 @@ $(document).ready(function () {
             .then(function (response) {
 
                 for (var i = 0; i < response.hits.length; i++) {
+
                     $("#break-card-img-" + i).append(response.hits[i].recipe.image);
                     $("#break-card-img-" + i).attr("src", response.hits[i].recipe.image);
                     $("#breakfast-food-card-" + i).attr({
@@ -138,6 +182,7 @@ $(document).ready(function () {
             .then(function (response) {
 
                 for (var i = 0; i < response.hits.length; i++) {
+
                     $("#lunch-card-img-" + i).append(response.hits[i].recipe.image);
                     $("#lunch-card-img-" + i).attr("src", response.hits[i].recipe.image);
                     $("#lunch-food-card-" + i).attr({
@@ -148,7 +193,7 @@ $(document).ready(function () {
                     })
                     $("#lunch" + i).prepend(response.hits[i].recipe.label);
                 }
-                
+
                 console.log(response);
 
             });
@@ -186,7 +231,7 @@ $(document).ready(function () {
                     })
                     $("#dinner" + i).prepend(response.hits[i].recipe.label);
                 }
-                
+
                 console.log(response);
                 console.log(response.length);
 
@@ -206,7 +251,7 @@ $(document).ready(function () {
 
     var explainArray = ["", "Having pre-prepared meals on hand can also reduce portion size and help you reach your nutrition goals. This way, you’ll avoid unhealthy options like TV dinners or takeout, especially when you’re overwhelmed or exhausted.","But tracking those calories and nutrients can be difficult, so we prepared a way for you to do it on the next page!"]
 
-    $("#explaining").on("click", function() {
+    $("#explaining").on("click", function () {
 
         console.log("p");
         console.log(explainArray);
