@@ -266,7 +266,14 @@ $(document).ready(function () {
 
     $(window).resize(function () {
         if (window.innerWidth < 500) {
-            $("#introImage").remove();
+            $("#introImage").hide();
+
+        }
+    });
+
+    $(window).resize(function () {
+        if (window.innerWidth > 500) {
+            $("#introImage").show();
 
         }
     });
