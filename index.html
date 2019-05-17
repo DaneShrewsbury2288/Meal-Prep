@@ -52,7 +52,7 @@
         </div>
     </div>
     <div id="searchContainer" style="display: none">
-        <div class="row" style="margin: 0 auto 0 23%">
+        <div class="row" style="margin: 0 auto 0 15%">
             <div id="search-food-card-0" class="card" style="width: 13rem;" draggable="true">
                 <p id="search0"></p>
                 <img id="search-card-img-0" draggable="false"
@@ -79,7 +79,7 @@
                     src="https://oipps.co.uk/skin/frontend/invopak/default/images/placeholder/221x190.png">
             </div>
         </div>
-        <div class="row" style="margin: 0 auto 0 23%">
+        <div class="row" style="margin: 0 auto 0 15%">
             <div id="search-food-card-5" class="card" style="width: 13rem;" draggable="true">
                 <p id="search5"></p>
                 <img id="search-card-img-5" draggable="false"
@@ -113,12 +113,13 @@
             <div class="column">
                 <p id="weeklyMenuText">Weekly Menu Planner!</p>
             </div>
-            <button type="button" class="btn btn-success btn-color" id="clear"> Clear all! </button>
-            <button type="button" class="btn btn-success btn-color" id="calculate"> Calculate! </button>
-            <form>
+
+            <form id="Search-food">
                 <input style="border-color: black" type="text" id="searchAPI" placeholder="Enter your search here">
                 <input id="submitbutton" style="margin: 5px; border-color: black" type="submit">
             </form>
+
+            <button type="button" class="btn btn-success btn-color" id="clear"> Clear all! </button>
         </div>
 
         <br>
@@ -196,9 +197,12 @@
             </div>
 
             <div class="column btn-group dropup">
+
                 <button type="button" class="category btn btn-info dropdown-toggle lunchbutton btn-color"
                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="lunch-button">LUNCH</button>
+
                 <div class="dropdown-menu dropdown-menu-right" id="lunch-menu">
+
                     <div class="row">
                         <div id="lunch-food-card-1" class="card" style="width: 11rem;" draggable="true">
                             <p id="lunch1"></p>
@@ -227,6 +231,7 @@
                     </div>
 
                     <div class="row">
+
                         <div id="lunch-food-card-6" class="card" style="width: 11rem;" draggable="true">
                             <p id="lunch6"></p>
                             <img id="lunch-card-img-6" draggable="false" src="" alt="">
@@ -256,11 +261,14 @@
             </div>
 
             <div class="column btn-group dropup">
+
                 <button type="button" class="category btn btn-info dropdown-toggle dinnerbutton btn-color"
                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="dinner-button">DINNER</button>
+
                 <div class="dropdown-menu dropdown-menu-right" id="dinner-menu">
 
                     <div class="row">
+
                         <div id="dinner-food-card-1" class="card" style="width: 11rem;" draggable="true">
                             <p id="dinner1"></p>
                             <img id="dinner-card-img-1" draggable="false" src="" alt="">
@@ -288,6 +296,7 @@
                     </div>
 
                     <div class="row">
+                        
                         <div id="dinner-food-card-6" class="card" style="width: 11rem;" draggable="true">
                             <p id="dinner6"></p>
                             <img id="dinner-card-img-6" draggable="false" src="" alt="">

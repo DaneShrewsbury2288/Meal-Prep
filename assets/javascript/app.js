@@ -30,6 +30,10 @@ $(document).ready(function () {
             var data = event.dataTransfer.getData("Text");
             console.log("data stored: " + data);
 
+            // var nodeCopy = document.getElementById(data).cloneNode(true);
+            // nodeCopy.id = "newId"; 
+            // event.target.appendChild(nodeCopy);
+
             var cloneDiv = $("#" + data).clone();
             cloneDiv.attr("id", data);
             $("#" + data).after(cloneDiv);
@@ -81,11 +85,6 @@ $(document).ready(function () {
         else {
             $("#dinner-menu").hide();
         };
-    });
-
-    $("#calculate").on("click", function () {
-        console.log("Calculated!")
-
     });
 
     $("#clear").on("click", function () {
@@ -294,28 +293,24 @@ $(document).ready(function () {
         var saturdayDinnerCalories = $("#saturday-dinner").children().attr("calories");
 
         var saturdayCalories = Math.round((+saturdayBreakfastCalories) + (+saturdayLunchCalories) + (+saturdayDinnerCalories));
-        console.log("Calories:" + saturdayCalories);
 
         var saturdayBreakfastProtein = $("#saturday-breakfast").children().attr("protein");
         var saturdayLunchProtein = $("#saturday-lunch").children().attr("protein");
         var saturdayDinnerProtein = $("#saturday-dinner").children().attr("protein");
 
         var saturdayProtein = Math.round((+saturdayBreakfastProtein) + (+saturdayLunchProtein) + (+saturdayDinnerProtein));
-        console.log("Protein: " + saturdayProtein);
 
         var saturdayBreakfastCarbs = $("#saturday-breakfast").children().attr("carbohydrates");
         var saturdayLunchCarbs = $("#saturday-lunch").children().attr("carbohydrates");
         var saturdayDinnerCarbs = $("#saturday-dinner").children().attr("carbohydrates");
 
         var saturdayCarbs = Math.round((+saturdayBreakfastCarbs) + (+saturdayLunchCarbs) + (+saturdayDinnerCarbs));
-        console.log("Carbs:" + saturdayCarbs);
 
         var saturdayBreakfastFats = $("#saturday-breakfast").children().attr("fats");
         var saturdayLunchFats = $("#saturday-lunch").children().attr("fats");
         var saturdayDinnerFats = $("#saturday-dinner").children().attr("fats");
 
         var saturdayFats = Math.round((+saturdayBreakfastFats) + (+saturdayLunchFats) + (+saturdayDinnerFats));
-        console.log("Fats:" + saturdayFats);
 
         $("#saturday-stats").empty().append("Calories: " + saturdayCalories + "<br>");
         $("#saturday-stats").append("Protein: " + saturdayProtein + "g" + "<br>");
@@ -385,10 +380,10 @@ $(document).ready(function () {
                     $("#break-card-img-" + i).append(response.hits[i].recipe.image);
                     $("#break-card-img-" + i).attr("src", response.hits[i].recipe.image);
                     $("#breakfast-food-card-" + i).attr({
-                        "calories": response.hits[i].recipe.calories,
-                        "protein": response.hits[i].recipe.digest[2].total,
-                        "fats": response.hits[i].recipe.digest[0].total,
-                        "carbohydrates": response.hits[i].recipe.digest[1].total,
+                        "calories": response.hits[i].recipe.calories / response.hits[i].recipe.yield,
+                        "protein": response.hits[i].recipe.digest[2].total / response.hits[i].recipe.yield,
+                        "fats": response.hits[i].recipe.digest[0].total / response.hits[i].recipe.yield,
+                        "carbohydrates": response.hits[i].recipe.digest[1].total / response.hits[i].recipe.yield,
                     })
                     $("#break" + i).prepend(response.hits[i].recipe.label);
                 }
@@ -418,10 +413,10 @@ $(document).ready(function () {
                     $("#lunch-card-img-" + i).append(response.hits[i].recipe.image);
                     $("#lunch-card-img-" + i).attr("src", response.hits[i].recipe.image);
                     $("#lunch-food-card-" + i).attr({
-                        "calories": response.hits[i].recipe.calories,
-                        "protein": response.hits[i].recipe.digest[2].total,
-                        "fats": response.hits[i].recipe.digest[0].total,
-                        "carbohydrates": response.hits[i].recipe.digest[1].total,
+                        "calories": response.hits[i].recipe.calories / response.hits[i].recipe.yield,
+                        "protein": response.hits[i].recipe.digest[2].total / response.hits[i].recipe.yield,
+                        "fats": response.hits[i].recipe.digest[0].total / response.hits[i].recipe.yield,
+                        "carbohydrates": response.hits[i].recipe.digest[1].total / response.hits[i].recipe.yield,
                     })
                     $("#lunch" + i).prepend(response.hits[i].recipe.label);
                 }
@@ -453,10 +448,10 @@ $(document).ready(function () {
                     $("#dinner-card-img-" + i).append(response.hits[i].recipe.image);
                     $("#dinner-card-img-" + i).attr("src", response.hits[i].recipe.image);
                     $("#dinner-food-card-" + i).attr({
-                        "calories": response.hits[i].recipe.calories,
-                        "protein": response.hits[i].recipe.digest[2].total,
-                        "fats": response.hits[i].recipe.digest[0].total,
-                        "carbohydrates": response.hits[i].recipe.digest[1].total,
+                        "calories": response.hits[i].recipe.calories / response.hits[i].recipe.yield,
+                        "protein": response.hits[i].recipe.digest[2].total / response.hits[i].recipe.yield,
+                        "fats": response.hits[i].recipe.digest[0].total / response.hits[i].recipe.yield,
+                        "carbohydrates": response.hits[i].recipe.digest[1].total / response.hits[i].recipe.yield,
                     })
                     $("#dinner" + i).prepend(response.hits[i].recipe.label);
                 }
