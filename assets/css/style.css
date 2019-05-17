@@ -203,16 +203,30 @@ h1 {
     }
 
     li {
-        font-size: 18px;
+        font-size: 15px;
     }
 
     .foodBox {
     height: 100px;
-    width: 65px;
+    width: 68px;
 
     }
     
     .dayText {
         font-size: 15px;
+    }
+
+    .category {
+        font-size: 10px;
+        margin:0;
+        left:0;
+    }
+
+    #breakfast-button, #lunch-button, #dinner-button, #stats {
+        margin: 0 0 10px 0;
+    } 
+
+    .statsBox { 
+        font-size: 11px;
     }
 }
