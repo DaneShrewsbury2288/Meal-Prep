@@ -214,18 +214,17 @@ $(document).ready(function () {
         })
             .then(function (response) {
                 console.log(response);
-                $("#searchimg0").attr("src", response.hits[0].recipe.image);
-                $("#searchimg1").attr("src", response.hits[1].recipe.image);
-                $("#searchimg2").attr("src", response.hits[2].recipe.image);
-                $("#searchimg3").attr("src", response.hits[3].recipe.image);
-                $("#searchimg4").attr("src", response.hits[4].recipe.image);
-                $("#searchimg5").attr("src", response.hits[5].recipe.image);
-                $("#searchimg6").attr("src", response.hits[6].recipe.image);
-                $("#searchimg7").attr("src", response.hits[7].recipe.image);
-                $("#searchimg8").attr("src", response.hits[8].recipe.image);
-                $("#searchimg9").attr("src", response.hits[9].recipe.image);
+                $("#search-card-img-0").attr("src", response.hits[0].recipe.image);
+                $("#search-card-img-1").attr("src", response.hits[1].recipe.image);
+                $("#search-card-img-2").attr("src", response.hits[2].recipe.image);
+                $("#search-card-img-3").attr("src", response.hits[3].recipe.image);
+                $("#search-card-img-4").attr("src", response.hits[4].recipe.image);
+                $("#search-card-img-5").attr("src", response.hits[5].recipe.image);
+                $("#search-card-img-6").attr("src", response.hits[6].recipe.image);
+                $("#search-card-img-7").attr("src", response.hits[7].recipe.image);
+                $("#search-card-img-8").attr("src", response.hits[8].recipe.image);
+                $("#search-card-img-9").attr("src", response.hits[9].recipe.image);
                 
-
 
             }
 
