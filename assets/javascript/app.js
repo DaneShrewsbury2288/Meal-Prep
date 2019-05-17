@@ -208,29 +208,20 @@ $(document).ready(function () {
         var userinput = input;  
         var queryURL = `https://api.edamam.com/search?q=${userinput}&app_id=${apiID}&app_key=${apiKey}`
 
+        $("#searchContainer").show();
+
         $.ajax({
             url: queryURL,
             method: "GET"
         })
             .then(function (response) {
+                //For loop for appending images and title of user search
                 console.log(response);
-                $("#search-card-img-0").attr("src", response.hits[0].recipe.image);
-                $("#search-card-img-1").attr("src", response.hits[1].recipe.image);
-                $("#search-card-img-2").attr("src", response.hits[2].recipe.image);
-                $("#search-card-img-3").attr("src", response.hits[3].recipe.image);
-                $("#search-card-img-4").attr("src", response.hits[4].recipe.image);
-                $("#search-card-img-5").attr("src", response.hits[5].recipe.image);
-                $("#search-card-img-6").attr("src", response.hits[6].recipe.image);
-                $("#search-card-img-7").attr("src", response.hits[7].recipe.image);
-                $("#search-card-img-8").attr("src", response.hits[8].recipe.image);
-                $("#search-card-img-9").attr("src", response.hits[9].recipe.image);
-                
-
+                for (var i = 0; i < response.hits.length; i++) {
+                $("#search-card-img-" + i).attr("src", response.hits[i].recipe.image);
+                $("#search"+ i).text(response.hits[i].recipe.label);
             }
-
-
-
-            );
+        });
     });
 
 
