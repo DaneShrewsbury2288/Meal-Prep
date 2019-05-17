@@ -346,8 +346,13 @@ $(document).ready(function () {
                 //For loop for appending images and title of user search
                 console.log(response);
                 for (var i = 0; i < response.hits.length; i++) {
-                $("#search-card-img-" + i).attr("src", response.hits[i].recipe.image);
-                $("#search"+ i).text(response.hits[i].recipe.label);
+               $("#search-card-img-" + i).attr("src", response.hits[i].recipe.image);
+               $("#search"+ i).text(response.hits[i].recipe.label);
+               $("#search-food-card-" + i).attr({
+                    "calories": response.hits[i].recipe.calories,
+                        "protein": response.hits[i].recipe.digest[2].total,
+                        "fats": response.hits[i].recipe.digest[0].total,
+                        "carbohydrates": response.hits[i].recipe.digest[1].total,
             }
         });
     });
