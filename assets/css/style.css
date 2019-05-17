@@ -1,3 +1,6 @@
+.container {
+    
+}
 
 .jumbotron {
     background: rgb(94, 218, 187);
@@ -28,6 +31,7 @@ img {
     height: 100px;
     width: 150px;
     margin-left: 15px;
+    padding: 10px;
 }
 
 .dropdown-menu {
@@ -188,6 +192,10 @@ h1 {
 
 #weeklyMenuText {
     font-size: 35px;
+}
+
+#searchresultsdiv {
+    margin: 0 auto 0 auto;
 }
 
 
