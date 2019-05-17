@@ -22,13 +22,10 @@ $(document).ready(function () {
     // Events fired on the actual drop event
     document.addEventListener("drop", function (event) {
         event.preventDefault();
-        console.log("dropped")
 
         if (event.target.className == "foodBox droptarget") {
 
             var data = event.dataTransfer.getData("Text");
-            var calories = event.dataTransfer.getData("Calories");
-            console.log("Calories" + calories);
             console.log("data stored: " + data);
 
             var cloneDiv = $("#" + data).clone();
@@ -36,12 +33,13 @@ $(document).ready(function () {
             $("#" + data).after(cloneDiv);
             console.log(cloneDiv)
 
-            event.target.appendChild(document.getElementById(data));
 
+            event.target.appendChild(document.getElementById(data));
             console.log("successful drop")
         }
     });
 
+    // Reveal the breakfast menu when clicked
     $("#breakfast-button").on("click", function () {
 
         if ($("#breakfast-menu").is(":hidden")) {
@@ -55,6 +53,7 @@ $(document).ready(function () {
         $("#dinner-menu").hide();
     });
 
+    // Reveal the lunch button when clicked
     $("#lunch-button").on("click", function () {
 
         if ($("#lunch-menu").is(":hidden")) {
@@ -68,6 +67,7 @@ $(document).ready(function () {
         $("#dinner-menu").hide();
     });
 
+    // Reveal the dinner button when clicked
     $("#dinner-button").on("click", function () {
 
         $("#breakfast-menu").hide();
@@ -83,6 +83,8 @@ $(document).ready(function () {
 
     $("#calculate").on("click", function () {
         console.log("Calculated!")
+
+        // Calculate Sunday Calories / Nutrients 
 
         var sundayBreakfastCalories = $("#sunday-breakfast").children().attr("calories");
         var sundayLunchCalories = $("#sunday-lunch").children().attr("calories");
@@ -112,6 +114,73 @@ $(document).ready(function () {
         $("#sunday-stats").append("Protein: " + sundayProtein + "g" + "<br>");
         $("#sunday-stats").append("Carbs: " + sundayCarbs + "g" + "<br>");
         $("#sunday-stats").append("Fats: " + sundayFats + "g" + "<br>");
+
+
+        // Calculate Monday Calories / Nutrients
+
+        var mondayBreakfastCalories = $("#monday-breakfast").children().attr("calories");
+        var mondayLunchCalories = $("#monday-lunch").children().attr("calories");
+        var mondayDinnerCalories = $("#monday-dinner").children().attr("calories");
+
+        var mondayCalories = Math.round((+mondayBreakfastCalories) + (+mondayLunchCalories) + (+mondayDinnerCalories));
+
+        var mondayBreakfastProtein = $("#monday-breakfast").children().attr("protein");
+        var mondayLunchProtein = $("#monday-lunch").children().attr("protein");
+        var mondayDinnerProtein = $("#monday-dinner").children().attr("protein");
+
+        var mondayProtein = Math.round((+mondayBreakfastProtein) + (+mondayLunchProtein) + (+mondayDinnerProtein));
+
+        var mondayBreakfastCarbs = $("#monday-breakfast").children().attr("carbohydrates");
+        var mondayLunchCarbs = $("#monday-lunch").children().attr("carbohydrates");
+        var mondayDinnerCarbs = $("#monday-dinner").children().attr("carbohydrates");
+
+        var mondayCarbs = Math.round((+mondayBreakfastCarbs) + (+mondayLunchCarbs) + (+mondayDinnerCarbs));
+
+        var mondayBreakfastFats = $("#monday-breakfast").children().attr("fats");
+        var mondayLunchFats = $("#monday-lunch").children().attr("fats");
+        var mondayDinnerFats = $("#monday-dinner").children().attr("fats");
+
+        var mondayFats = Math.round((+mondayBreakfastFats) + (+mondayLunchFats) + (+mondayDinnerFats));
+
+        $("#monday-stats").empty().append("Calories: " + mondayCalories + "<br>");
+        $("#monday-stats").append("Protein: " + mondayProtein + "g" + "<br>");
+        $("#monday-stats").append("Carbs: " + mondayCarbs + "g" + "<br>");
+        $("#monday-stats").append("Fats: " + mondayFats + "g" + "<br>");
+
+        // Calculate Tuesday Calories / Nutrients 
+
+        var tuesdayBreakfastCalories = $("#tuesday-breakfast").children().attr("calories");
+        var tuesdayLunchCalories = $("#tuesday-lunch").children().attr("calories");
+        var tuesdayDinnerCalories = $("#tuesday-dinner").children().attr("calories");
+
+        var tuesdayCalories = Math.round((+tuesdayBreakfastCalories) + (+tuesdayLunchCalories) + (+tuesdayDinnerCalories));
+ 
+
+        var tuesdayBreakfastProtein = $("#tuesday-breakfast").children().attr("protein");
+        var tuesdayLunchProtein = $("#tuesday-lunch").children().attr("protein");
+        var tuesdayDinnerProtein = $("#tuesday-dinner").children().attr("protein");
+
+        var tuesdayProtein = Math.round((+tuesdayBreakfastProtein) + (+tuesdayLunchProtein) + (+tuesdayDinnerProtein));
+
+
+        var tuesdayBreakfastCarbs = $("#tuesday-breakfast").children().attr("carbohydrates");
+        var tuesdayLunchCarbs = $("#tuesday-lunch").children().attr("carbohydrates");
+        var tuesdayDinnerCarbs = $("#tuesday-dinner").children().attr("carbohydrates");
+
+        var tuesdayCarbs = Math.round((+tuesdayBreakfastCarbs) + (+tuesdayLunchCarbs) + (+tuesdayDinnerCarbs));
+
+
+        var tuesdayBreakfastFats = $("#tuesday-breakfast").children().attr("fats");
+        var tuesdayLunchFats = $("#tuesday-lunch").children().attr("fats");
+        var tuesdayDinnerFats = $("#tuesday-dinner").children().attr("fats");
+
+        var tuesdayFats = Math.round((+tuesdayBreakfastFats) + (+tuesdayLunchFats) + (+tuesdayDinnerFats));
+  
+
+        $("#tuesday-stats").empty().append("Calories: " + tuesdayCalories + "<br>");
+        $("#tuesday-stats").append("Protein: " + tuesdayProtein + "g" + "<br>");
+        $("#tuesday-stats").append("Carbs: " + tuesdayCarbs + "g" + "<br>");
+        $("#tuesday-stats").append("Fats: " + tuesdayFats + "g" + "<br>");
 
     });
 
