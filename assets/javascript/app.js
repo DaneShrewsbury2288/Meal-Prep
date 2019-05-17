@@ -31,6 +31,7 @@ $(document).ready(function () {
             var cloneDiv = $("#" + data).clone();
             cloneDiv.attr("id", data);
             $("#" + data).after(cloneDiv);
+            console.log(cloneDiv)
 
 
             event.target.appendChild(document.getElementById(data));
@@ -192,6 +193,39 @@ $(document).ready(function () {
     };
 
 
+    //Prevents refresh on clicking submit button
+    $('#submitbutton').click(function (e) {
+
+        e.preventDefault();
+    });
+
+
+    //On click of submit next to input form, AJAX request for user input
+    $(document).on("click", "#submitbutton", function () {
+        var apiID = "aee51471";
+        var apiKey = "b4a9d4d9acaf471f9a836e6615157895";
+        var input = document.getElementById("searchAPI").value;
+        var userinput = input;  
+        var queryURL = `https://api.edamam.com/search?q=${userinput}&app_id=${apiID}&app_key=${apiKey}`
+
+        $.ajax({
+            url: queryURL,
+            method: "GET"
+        })
+            .then(function (response) {
+                console.log(response);
+                $("#imgtest").attr("src", response.hits[1].recipe.image);
+
+
+            }
+
+
+
+            );
+    });
+
+
+
 
 
     //On click of x button, call api for images and nutrient information
@@ -203,7 +237,7 @@ $(document).ready(function () {
         // ajax call
         var apiID = "aee51471";
         var apiKey = "b4a9d4d9acaf471f9a836e6615157895";
-        var q = "chicken";
+        var q = "breakfast";
         // var q = on.click on breakfast lunch or dinner dropdown?
         var queryURL = `https://api.edamam.com/search?q=${q}&app_id=${apiID}&app_key=${apiKey}`
 
@@ -232,9 +266,6 @@ $(document).ready(function () {
 
 
     $(document).on("click", "#lunch-button", function () {
-
-        // For breakfast, hide lunch/dinner. For lunch, hide breakfast/dinner. etc..
-
 
         // ajax call
         var apiID = "aee51471";
@@ -270,9 +301,6 @@ $(document).ready(function () {
 
     $(document).on("click", "#dinner-button", function () {
 
-        // For breakfast, hide lunch/dinner. For lunch, hide breakfast/dinner. etc..
-
-
         // ajax call
         var apiID = "aee51471";
         var apiKey = "b4a9d4d9acaf471f9a836e6615157895";
@@ -301,15 +329,20 @@ $(document).ready(function () {
                 }
 
                 console.log(response);
-                console.log(response.length);
-
 
             });
     });
 
     $(window).resize(function () {
         if (window.innerWidth < 500) {
-            $("#introImage").remove();
+            $("#introImage").hide();
+
+        }
+    });
+
+    $(window).resize(function () {
+        if (window.innerWidth > 500) {
+            $("#introImage").show();
 
         }
     });
@@ -317,7 +350,7 @@ $(document).ready(function () {
 
 
 
-    var explainArray = ["", "Having pre-prepared meals on hand can also reduce portion size and help you reach your nutrition goals. This way, you’ll avoid unhealthy options like TV dinners or takeout, especially when you’re overwhelmed or exhausted.", "But tracking those calories and nutrients can be difficult, so we prepared a way for you to do it on the next page!"]
+    var explainArray = ["", "Having pre-prepared meals on hand can also reduce portion size and help you reach your nutrition goals. This way, you’ll avoid unhealthy options like TV dinners or takeout, especially when you’re overwhelmed or exhausted.","But tracking those calories and nutrients can be tedious, so we prepared a way for you to do it on the next page!"]
 
     $("#explaining").on("click", function () {
 
