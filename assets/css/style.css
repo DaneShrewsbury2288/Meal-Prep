@@ -194,6 +194,10 @@ h1 {
     font-size: 35px;
 }
 
+#searchresultsdiv {
+    margin: 0 auto 0 auto;
+}
+
 
 
 @media (max-width: 426px) {
