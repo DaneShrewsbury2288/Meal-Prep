@@ -3,7 +3,7 @@ $(document).ready(function () {
     $("#submitButton").on("click", function() {
         event.preventDefault();
 
-        var apiKey = "44a3ae82ad34dc48c555c3e55f64b04c";
+        var apiKey = "9d3e8ccabaa18dc09d254e37adb22193";
         var userSearch = $("#recipeInput").val().trim();
         var queryURL = `https://www.food2fork.com/api/search?key=${apiKey}&q=${userSearch}`
 
