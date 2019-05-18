@@ -16,7 +16,7 @@ a {
     margin-top: 10px;
 }
 
-.jumbotron {
+#jumbotron {
     background: rgb(94, 218, 187);
     color: white;
 }
