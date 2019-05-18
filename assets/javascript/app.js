@@ -592,18 +592,5 @@ $(document).ready(function () {
             });
     });
 
-    $(window).resize(function () {
-        if (window.innerWidth < 500) {
-            $("#introImage").hide();
-
-        }
-    });
-
-    $(window).resize(function () {
-        if (window.innerWidth > 500) {
-            $("#introImage").show();
-
-        }
-    });
-
 });
+
