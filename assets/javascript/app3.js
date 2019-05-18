@@ -16,19 +16,25 @@ $(document).ready(function () {
                 //convert JSON String into JSON object
                 var json = response;
                 obj = JSON.parse(json);
+                console.log(obj);
                 console.log(obj.recipes);
+                console.log(obj.recipes[1].title);
 
-                for (var i = 0; i < response.recipes.length; i++){
+                var resultsArea = $("<section class='results-container'>");
+
+                for (var i = 0; i < obj.recipes.length; i++) {
+                    var resultsDiv = $("<div class='results-container'>");
+                    var sImage = $("<img class='imageresult'>");
+                    var title = $("<p class=foodname>").text(obj.recipes[i].title);
 
                 }
 
-            }
+                resultsDiv.prepend(sImage);
+                resultsDiv.prepend(title);
+                resultsArea.prepend(resultsDiv);
 
 
-
-            );
-
-
+            });
 
     });
 
