@@ -3,7 +3,7 @@ $(document).ready(function () {
     $("#submitButton").on("click", function() {
         event.preventDefault();
 
-        var apiKey = "0eaf44ffa7f6490ddcb1c67293a62dbb";
+        var apiKey = "44a3ae82ad34dc48c555c3e55f64b04c";
         var userSearch = $("#recipeInput").val().trim();
         var queryURL = `https://www.food2fork.com/api/search?key=${apiKey}&q=${userSearch}`
 
@@ -14,24 +14,32 @@ $(document).ready(function () {
         })
             .then(function (response) {
                 //convert JSON String into JSON object
+                console.log(response);
                 var json = response;
                 obj = JSON.parse(json);
                 console.log(obj);
                 console.log(obj.recipes);
                 console.log(obj.recipes[1].title);
 
-                var resultsArea = $("<section class='results-container'>");
+                for (var i = 0; i < 10; i++) {
 
-                for (var i = 0; i < obj.recipes.length; i++) {
-                    var resultsDiv = $("<div class='results-container'>");
-                    var sImage = $("<img class='imageresult'>");
-                    var title = $("<p class=foodname>").text(obj.recipes[i].title);
+                    var image = obj.recipes[i].image_url;
+                    var source = obj.recipes[i].source_url;
+                    var title = obj.recipes[i].title;
+
+                    var card = $("<div id='recipe" + i + "' class='card'>");
+                    var recipeTitle = $("<p id='recipeTitle" + i + "'>" + title + "</p>");
+                    var recipeSource = $("<a href='" + source + "'>");
+                    var recipeImage = $("<img id='recipeImage" + i + "' src='" + image + "'>");
+
+                    recipeSource.append(recipeImage);
+                    card.append(recipeTitle);
+                    card.append(recipeSource);
+
+
+                    $("#recipeRow").append(card);
 
                 }
-
-                resultsDiv.prepend(sImage);
-                resultsDiv.prepend(title);
-                resultsArea.prepend(resultsDiv);
 
 
             });

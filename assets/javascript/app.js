@@ -501,7 +501,6 @@ $(document).ready(function () {
        
         calculate();
 
-
     });
 
 
