@@ -1,7 +1,6 @@
 # Meal-Prep
 Weekly meal prep website 
 
-https://daneshrewsbury2288.github.io/Meal-Prep/
 https://daneshrewsbury2288.github.io/Meal-Prep/intro.html
 
 
