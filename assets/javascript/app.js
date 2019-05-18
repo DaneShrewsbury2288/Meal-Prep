@@ -353,7 +353,6 @@ $(document).ready(function () {
 
         database.ref($("#login").val().trim()).set({
 
-
             sundayBreakfast: sundayBreakfast,
             sundayLunch: sundayLunch,
             sundayDinner: sundayDinner,
@@ -389,8 +388,12 @@ $(document).ready(function () {
     $("#add-user").on("click", function() {
         var user = $("#login").val().trim();
         event.preventDefault();
+
+        $("#current-user").html("Current User: " + user);
+
         console.log(user);
         console.log(database.ref(user).key);
+
         if (user === database.ref(user).key) {
 
             database.ref(user).on("value", function(snapshot) {
@@ -424,7 +427,9 @@ $(document).ready(function () {
                 $("#saturday-breakfast").html(snapshot.val().saturdayBreakfast);
                 $("#saturday-lunch").html(snapshot.val().saturdayLunch);
                 $("#saturday-dinner").html(snapshot.val().saturdayDinner);
-        
+
+                calculate();
+                
             });
 
         }
@@ -484,40 +489,6 @@ $(document).ready(function () {
         event.preventDefault();
 
         firebaseMeals();
-
-    });
-
-    database.ref("user").on("child_added", function (snapshot) {
-
-        console.log(snapshot.val());
-
-        $("#sunday-breakfast").html(snapshot.val().sundayBreakfast);
-        $("#sunday-lunch").html(snapshot.val().sundayLunch);
-        $("#sunday-dinner").html(snapshot.val().sundayDinner);
-
-        $("#monday-breakfast").html(snapshot.val().mondayBreakfast);
-        $("#monday-lunch").html(snapshot.val().mondayLunch);
-        $("#monday-dinner").html(snapshot.val().mondayDinner);
-
-        $("#tuesday-breakfast").html(snapshot.val().tuesdayBreakfast);
-        $("#tuesday-lunch").html(snapshot.val().tuesdayLunch);
-        $("#tuesday-dinner").html(snapshot.val().tuesdayDinner);
-
-        $("#wednesday-breakfast").html(snapshot.val().wednesdayBreakfast);
-        $("#wednesday-lunch").html(snapshot.val().wednesdayLunch);
-        $("#wednesday-dinner").html(snapshot.val().wednesdayDinner);
-
-        $("#thursday-breakfast").html(snapshot.val().thursdayBreakfast);
-        $("#thursday-lunch").html(snapshot.val().thursdayLunch);
-        $("#thursday-dinner").html(snapshot.val().thursdayDinner);
-
-        $("#friday-breakfast").html(snapshot.val().fridayBreakfast);
-        $("#friday-lunch").html(snapshot.val().fridayLunch);
-        $("#friday-dinner").html(snapshot.val().fridayDinner);
-
-        $("#saturday-breakfast").html(snapshot.val().saturdayBreakfast);
-        $("#saturday-lunch").html(snapshot.val().saturdayLunch);
-        $("#saturday-dinner").html(snapshot.val().saturdayDinner);
 
     });
 

@@ -1,15 +1,20 @@
-<<<<<<< HEAD
-=======
-.container {
-
-}
-
 
 a {
     color:white;
 }
->>>>>>> 91c6c647abdcd39314497edeebda11053dc2b330
 
+#user-name, #add-user {
+    margin-left: 45%;
+}
+
+#current-user {
+    margin-left: 40%;
+    margin-top: 10px;
+}
+
+#add-user {
+    margin-top: 10px;
+}
 
 .jumbotron {
     background: rgb(94, 218, 187);
