@@ -46,13 +46,8 @@ $(document).ready(function () {
     });
 
     $(".droptarget").dblclick(function(){
-
-        console.log("Doubleclicked")
-        console.log("this" + this)
-
+        
         $(this).empty();
-
-      
 
       });
 
