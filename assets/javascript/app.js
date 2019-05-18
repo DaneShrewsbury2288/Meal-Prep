@@ -45,6 +45,12 @@ $(document).ready(function () {
         }
     });
 
+    $(".droptarget").dblclick(function(){
+        
+        $(this).empty();
+
+      });
+
     // Reveal the breakfast menu when clicked
     $("#breakfast-button").on("click", function () {
 
