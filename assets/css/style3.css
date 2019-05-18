@@ -1,0 +1,13 @@
+.jumbotron{
+    background-color: rgb(94, 218, 187);
+}
+
+.display-4 {
+    font-family: 'Pathway Gothic One', sans-serif;
+    font-size:120px;
+    color: white; 
+}
+
+body{
+    color: white;
+}
