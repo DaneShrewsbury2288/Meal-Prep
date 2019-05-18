@@ -321,6 +321,8 @@ $(document).ready(function () {
 
     function firebaseMeals() {
 
+
+
         var sundayBreakfast = $("#sunday-breakfast").html();
         var sundayLunch = $("#sunday-lunch").html();
         var sundayDinner = $("#sunday-dinner").html();
@@ -349,8 +351,7 @@ $(document).ready(function () {
         var saturdayLunch = $("#saturday-lunch").html();
         var saturdayDinner = $("#saturday-dinner").html();
 
-        database.ref().push({
-
+        database.ref("user").push( {
 
             sundayBreakfast: sundayBreakfast,
             sundayLunch: sundayLunch,
@@ -398,8 +399,6 @@ $(document).ready(function () {
     firebase.initializeApp(firebaseConfig);
 
     var database = firebase.database();
-    var user = firebase.auth().currentUser;
-    // var uid = user.uid;
 
     $("#save").on("click", function () {
         event.preventDefault();
@@ -408,8 +407,7 @@ $(document).ready(function () {
 
     });
 
-
-    database.ref().on("child_added", function (snapshot) {
+    database.ref("user").on("child_added", function (snapshot) {
 
         console.log(snapshot.val());
 
@@ -446,6 +444,13 @@ $(document).ready(function () {
     //Prevents refresh on clicking submit button
     $('#submitbutton').click(function (e) {
         e.preventDefault();
+    });
+
+    $("#stats").click(function (e) {
+       
+        calculate();
+
+
     });
 
 
