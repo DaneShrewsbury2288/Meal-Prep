@@ -12,7 +12,6 @@
 
 #Search-food {
     margin-left: 50px;
-
 }
 
 li {
@@ -75,12 +74,20 @@ p {
 #clear {
     float: right;
     margin-right: 0;
-    margin-left: 20%;
+    margin-left: 10%;
     width: 150px;
     height: 50px;
     margin-top: 10px;
 }
 
+#save {
+    float: right;
+    margin-right: 0;
+    margin-left: 5%;
+    width: 150px;
+    height: 50px;
+    margin-top: 10px;
+}
 
 #menuPlannerTitle {
     border-bottom: 1px black solid;

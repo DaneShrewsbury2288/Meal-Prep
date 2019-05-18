@@ -317,13 +317,134 @@ $(document).ready(function () {
         $("#saturday-stats").append("Carbs: " + saturdayCarbs + "g" + "<br>");
         $("#saturday-stats").append("Fats: " + saturdayFats + "g" + "<br>");
 
-    }
+    };
+
+    function firebaseMeals() {
+
+        var sundayBreakfast = $("#sunday-breakfast").html();
+        var sundayLunch = $("#sunday-lunch").html();
+        var sundayDinner = $("#sunday-dinner").html();
+
+        var mondayBreakfast = $("#monday-breakfast").html();
+        var mondayLunch = $("#monday-lunch").html();
+        var mondayDinner = $("#monday-dinner").html();
+
+        var tuesdayBreakfast = $("#tuesday-breakfast").html();
+        var tuesdayLunch = $("#tuesday-lunch").html();
+        var tuesdayDinner = $("#tuesday-dinner").html();
+
+        var wednesdayBreakfast = $("#wednesday-breakfast").html();
+        var wednesdayLunch = $("#wednesday-lunch").html();
+        var wednesdayDinner = $("#wednesday-dinner").html();
+
+        var thursdayBreakfast = $("#thursday-breakfast").html();
+        var thursdayLunch = $("#thursday-lunch").html();
+        var thursdayDinner = $("#thursday-dinner").html();
+
+        var fridayBreakfast = $("#friday-breakfast").html();
+        var fridayLunch = $("#friday-lunch").html();
+        var fridayDinner = $("#friday-dinner").html();
+
+        var saturdayBreakfast = $("#saturday-breakfast").html();
+        var saturdayLunch = $("#saturday-lunch").html();
+        var saturdayDinner = $("#saturday-dinner").html();
+
+        database.ref().push({
 
 
+            sundayBreakfast: sundayBreakfast,
+            sundayLunch: sundayLunch,
+            sundayDinner: sundayDinner,
+
+            mondayBreakfast: mondayBreakfast,
+            mondayLunch: mondayLunch,
+            mondayDinner: mondayDinner,
+
+            tuesdayBreakfast: tuesdayBreakfast,
+            tuesdayLunch: tuesdayLunch,
+            tuesdayDinner: tuesdayDinner,
+
+            wednesdayBreakfast: wednesdayBreakfast,
+            wednesdayLunch: wednesdayLunch,
+            wednesdayDinner: wednesdayDinner,
+
+            thursdayBreakfast: thursdayBreakfast,
+            thursdayLunch: thursdayLunch,
+            thursdayDinner: thursdayDinner,
+
+            fridayBreakfast: fridayBreakfast,
+            fridayLunch: fridayLunch,
+            fridayDinner: fridayDinner,
+
+            saturdayBreakfast: saturdayBreakfast,
+            saturdayLunch: saturdayLunch,
+            saturdayDinner: saturdayDinner,
+
+        });
+
+    };
+
+    var firebaseConfig = {
+        apiKey: "AIzaSyDKrVHt43u2axKy28_3Oy1y1mmC9yj1TPU",
+        authDomain: "meal-prep-b23a3.firebaseapp.com",
+        databaseURL: "https://meal-prep-b23a3.firebaseio.com",
+        projectId: "meal-prep-b23a3",
+        storageBucket: "meal-prep-b23a3.appspot.com",
+        messagingSenderId: "413133199350",
+        appId: "1:413133199350:web:7a9b0fdb10a8cabc"
+    };
+
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+
+    var database = firebase.database();
+    var user = firebase.auth().currentUser;
+    // var uid = user.uid;
+
+    $("#save").on("click", function () {
+        event.preventDefault();
+
+        firebaseMeals();
+
+    });
+
+
+    database.ref().on("child_added", function (snapshot) {
+
+        console.log(snapshot.val());
+
+        $("#sunday-breakfast").html(snapshot.val().sundayBreakfast);
+        $("#sunday-lunch").html(snapshot.val().sundayLunch);
+        $("#sunday-dinner").html(snapshot.val().sundayDinner);
+
+        $("#monday-breakfast").html(snapshot.val().mondayBreakfast);
+        $("#monday-lunch").html(snapshot.val().mondayLunch);
+        $("#monday-dinner").html(snapshot.val().mondayDinner);
+
+        $("#tuesday-breakfast").html(snapshot.val().tuesdayBreakfast);
+        $("#tuesday-lunch").html(snapshot.val().tuesdayLunch);
+        $("#tuesday-dinner").html(snapshot.val().tuesdayDinner);
+
+        $("#wednesday-breakfast").html(snapshot.val().wednesdayBreakfast);
+        $("#wednesday-lunch").html(snapshot.val().wednesdayLunch);
+        $("#wednesday-dinner").html(snapshot.val().wednesdayDinner);
+
+        $("#thursday-breakfast").html(snapshot.val().thursdayBreakfast);
+        $("#thursday-lunch").html(snapshot.val().thursdayLunch);
+        $("#thursday-dinner").html(snapshot.val().thursdayDinner);
+
+        $("#friday-breakfast").html(snapshot.val().fridayBreakfast);
+        $("#friday-lunch").html(snapshot.val().fridayLunch);
+        $("#friday-dinner").html(snapshot.val().fridayDinner);
+
+        $("#saturday-breakfast").html(snapshot.val().saturdayBreakfast);
+        $("#saturday-lunch").html(snapshot.val().saturdayLunch);
+        $("#saturday-dinner").html(snapshot.val().saturdayDinner);
+
+    });
 
     //Prevents refresh on clicking submit button
     $('#submitbutton').click(function (e) {
-
         e.preventDefault();
     });
 
@@ -346,15 +467,20 @@ $(document).ready(function () {
                 //For loop for appending images and title of user search
                 console.log(response);
                 for (var i = 0; i < response.hits.length; i++) {
-               $("#search-card-img-" + i).attr("src", response.hits[i].recipe.image);
-               $("#search"+ i).text(response.hits[i].recipe.label);
-               $("#search-food-card-" + i).attr({
-                    "calories": response.hits[i].recipe.calories,
-                        "protein": response.hits[i].recipe.digest[2].total,
-                        "fats": response.hits[i].recipe.digest[0].total,
-                        "carbohydrates": response.hits[i].recipe.digest[1].total,
-            }
-        });
+
+                    $("#search-card-img-" + i).attr("src", response.hits[i].recipe.image);
+                    $("#search" + i).text(response.hits[i].recipe.label);
+                    $("#search-food-card-" + i).attr({
+                        "calories": response.hits[i].recipe.calories / response.hits[i].recipe.yield,
+                        "protein": response.hits[i].recipe.digest[2].total / response.hits[i].recipe.yield,
+                        "fats": response.hits[i].recipe.digest[0].total / response.hits[i].recipe.yield,
+                        "carbohydrates": response.hits[i].recipe.digest[1].total / response.hits[i].recipe.yield,
+                    });
+                };
+
+
+            });
+
     });
 
 
