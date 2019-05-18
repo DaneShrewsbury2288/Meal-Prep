@@ -13,8 +13,14 @@ $(document).ready(function () {
             method: "GET"
         })
             .then(function (response) {
-                console.log(response);
-                console.log(response);
+                //convert JSON String into JSON object
+                var json = response;
+                obj = JSON.parse(json);
+                console.log(obj.recipes);
+
+                for (var i = 0; i < response.recipes.length; i++){
+
+                }
 
             }
 
