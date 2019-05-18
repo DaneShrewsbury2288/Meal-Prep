@@ -321,8 +321,6 @@ $(document).ready(function () {
 
     function firebaseMeals() {
 
-
-
         var sundayBreakfast = $("#sunday-breakfast").html();
         var sundayLunch = $("#sunday-lunch").html();
         var sundayDinner = $("#sunday-dinner").html();
@@ -351,7 +349,10 @@ $(document).ready(function () {
         var saturdayLunch = $("#saturday-lunch").html();
         var saturdayDinner = $("#saturday-dinner").html();
 
-        database.ref("user").push( {
+
+
+        database.ref($("#login").val().trim()).set({
+
 
             sundayBreakfast: sundayBreakfast,
             sundayLunch: sundayLunch,
@@ -383,7 +384,88 @@ $(document).ready(function () {
 
         });
 
+
     };
+
+    
+    $("#add-user").on("click", function() {
+        var user = $("#login").val().trim();
+        event.preventDefault();
+        console.log(user);
+        console.log(database.ref(user).key);
+        if (user === database.ref(user).key) {
+
+            database.ref(user).on("value", function(snapshot) {
+
+                console.log(snapshot.val());
+        
+                $("#sunday-breakfast").html(snapshot.val().sundayBreakfast);
+                $("#sunday-lunch").html(snapshot.val().sundayLunch);
+                $("#sunday-dinner").html(snapshot.val().sundayDinner);
+        
+                $("#monday-breakfast").html(snapshot.val().mondayBreakfast);
+                $("#monday-lunch").html(snapshot.val().mondayLunch);
+                $("#monday-dinner").html(snapshot.val().mondayDinner);
+        
+                $("#tuesday-breakfast").html(snapshot.val().tuesdayBreakfast);
+                $("#tuesday-lunch").html(snapshot.val().tuesdayLunch);
+                $("#tuesday-dinner").html(snapshot.val().tuesdayDinner);
+        
+                $("#wednesday-breakfast").html(snapshot.val().wednesdayBreakfast);
+                $("#wednesday-lunch").html(snapshot.val().wednesdayLunch);
+                $("#wednesday-dinner").html(snapshot.val().wednesdayDinner);
+        
+                $("#thursday-breakfast").html(snapshot.val().thursdayBreakfast);
+                $("#thursday-lunch").html(snapshot.val().thursdayLunch);
+                $("#thursday-dinner").html(snapshot.val().thursdayDinner);
+        
+                $("#friday-breakfast").html(snapshot.val().fridayBreakfast);
+                $("#friday-lunch").html(snapshot.val().fridayLunch);
+                $("#friday-dinner").html(snapshot.val().fridayDinner);
+        
+                $("#saturday-breakfast").html(snapshot.val().saturdayBreakfast);
+                $("#saturday-lunch").html(snapshot.val().saturdayLunch);
+                $("#saturday-dinner").html(snapshot.val().saturdayDinner);
+        
+            });
+
+        }
+
+        else {
+            database.ref().push({
+                user:user,
+
+                sundayBreakfast: sundayBreakfast,
+                sundayLunch: sundayLunch,
+                sundayDinner: sundayDinner,
+
+                mondayBreakfast: mondayBreakfast,
+                mondayLunch: mondayLunch,
+                mondayDinner: mondayDinner,
+
+                tuesdayBreakfast: tuesdayBreakfast,
+                tuesdayLunch: tuesdayLunch,
+                tuesdayDinner: tuesdayDinner,
+
+                wednesdayBreakfast: wednesdayBreakfast,
+                wednesdayLunch: wednesdayLunch,
+                wednesdayDinner: wednesdayDinner,
+
+                thursdayBreakfast: thursdayBreakfast,
+                thursdayLunch: thursdayLunch,
+                thursdayDinner: thursdayDinner,
+
+                fridayBreakfast: fridayBreakfast,
+                fridayLunch: fridayLunch,
+                fridayDinner: fridayDinner,
+
+                saturdayBreakfast: saturdayBreakfast,
+                saturdayLunch: saturdayLunch,
+                saturdayDinner: saturdayDinner,
+            })
+            console.log("work");
+        }
+    });
 
     var firebaseConfig = {
         apiKey: "AIzaSyDKrVHt43u2axKy28_3Oy1y1mmC9yj1TPU",
