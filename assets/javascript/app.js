@@ -583,14 +583,14 @@ $(document).ready(function () {
 
         $("#current-user").html("Current User: " + user);
 
-        console.log(user);
-        console.log(database.ref(user).key);
+        // console.log(user);
+        // console.log(database.ref(user).key);
 
         if (user === database.ref(user).key) {
 
             database.ref(user).on("value", function (snapshot) {
 
-                console.log(snapshot.val());
+                // console.log(snapshot.val());
 
                 $("#sunday-breakfast").html(snapshot.val().sundayBreakfast);
                 $("#sunday-lunch").html(snapshot.val().sundayLunch);
@@ -659,7 +659,7 @@ $(document).ready(function () {
                 saturdayLunch: saturdayLunch,
                 saturdayDinner: saturdayDinner,
             })
-            console.log("work");
+            // console.log("work");
         }
     });
 
@@ -769,7 +769,7 @@ $(document).ready(function () {
                     $("#break" + i).prepend(response.hits[i].recipe.label);
                 }
 
-                console.log(response);
+                // console.log(response);
             });
     });
 
@@ -803,7 +803,7 @@ $(document).ready(function () {
                     $("#lunch" + i).prepend(response.hits[i].recipe.label);
                 }
 
-                console.log(response);
+                // console.log(response);
 
             });
     });
@@ -839,7 +839,7 @@ $(document).ready(function () {
                     $("#dinner" + i).prepend(response.hits[i].recipe.label);
                 }
 
-                console.log(response);
+                // console.log(response);
 
             });
     });

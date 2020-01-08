@@ -5,8 +5,8 @@ $(document).ready(function () {
 
     $("#explaining").on("click", function () {
 
-        console.log("p");
-        console.log(explainArray);
+        // console.log("p");
+        // console.log(explainArray);
 
         if (explainArray.length === 1) {
             $("#moreInfo").fadeOut();
@@ -18,7 +18,7 @@ $(document).ready(function () {
                 $("#explaining").text(explainArray[i]);
                 $("#explaining").fadeIn();
                 explainArray.shift();
-                console.log(explainArray);
+                // console.log(explainArray);
             }
 
             for (var i = 0; i < 1; i++) {

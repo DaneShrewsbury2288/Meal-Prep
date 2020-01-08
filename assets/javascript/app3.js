@@ -14,12 +14,12 @@ $(document).ready(function () {
         })
             .then(function (response) {
                 //convert JSON String into JSON object
-                console.log(response);
+                // console.log(response);
                 var json = response;
                 obj = JSON.parse(json);
-                console.log(obj);
-                console.log(obj.recipes);
-                console.log(obj.recipes[1].title);
+                // console.log(obj);
+                // console.log(obj.recipes);
+                // console.log(obj.recipes[1].title);
 
                 for (var i = 0; i < 10; i++) {
 
