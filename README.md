@@ -18,7 +18,7 @@ This is a simple meal-prep application. The user can enter a meal name to search
 
 Deployed Link: https://daneshrewsbury2288.github.io/Meal-Prep/intro.html
 
-![Image](assets/images/intro_Readme.png);
+![Image](assets/images/introReadMe.png);
 
 ## Technologies
 
@@ -48,7 +48,7 @@ Deployed via GitHub
 
 ## Main
 
-![Image](assets/images/Main_ReadMe.png)
+![Image](assets/images/mainReadme.png)
 
 - Application Keys:
 - b4a9d4d9acaf471f9a836e6615157895
